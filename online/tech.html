@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>How does it work? &mdash; PsychoPy v3.0</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0.0b2',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="top" title="PsychoPy v3.0" href="../index.html" /> 
+  </head>
+  <body>
+
+
+<div id="header"  style="background-color: white">
+<table width="100%" cellpadding="10">
+<tr><td style="text-align:left;vertical-align:middle">
+<a href='http://www.psychopy.org'><img src="../_static/psychopyDocBanner2.gif" alt="PsychoPy logo" /></a>
+</td><td style="text-align:right;vertical-align:middle">
+<a href='http://www.nottingham.ac.uk'><img src=../_static/UoN_Supported_RGBsm.png alt="University of Nottingham" /></a>
+</td></table>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../index.html">PsychoPy</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3><a href="../index.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference internal" href="#">How does it work?</a><ul>
+<li><a class="reference internal" href="#how-does-this-compare-with-jspsych">How does this compare with jsPsych?</a></li>
+</ul>
+</li>
+</ul>
+
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="../_sources/online/tech.rst.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+
+            <h3>Quick links</h3>
+            <ul>
+            <li><a href="http://psychopy.org/installation.html"><strong>Download</strong></a></li>
+            <li><a href="http://discourse.psychopy.org">Forum</a></li>
+            <li><a href="http://twitter.com/psychopy">Twitter</a></li>
+            </ul>
+
+            <!-- facebook like -->
+            <div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=122767831154831&amp;xfbml=1"></script>
+            <fb:like href="http://www.facebook.com/pages/PsychoPy/140222406067597" send="false" layout="button_count" width="300" show_faces="false" action="like" font=""></fb:like>
+
+            <!-- google +1 -->
+            <!-- Place this tag where you want the +1 button to render -->
+            <g:plusone count="false" href="http://www.psychopy.org"></g:plusone>
+            <!-- Place this tag after the last plusone tag -->
+            <script type="text/javascript">
+              window.___gcfg = {lang: 'en-GB'};
+              (function() {
+                var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                po.src = 'https://apis.google.com/js/plusone.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+              })();
+            </script>
+
+          <div id="searchbox" style="display: none">
+            <h3>Searches</h3>
+            <form action="http://www.google.com/cse" id="cse-search-box">
+                <input type="hidden" name="cx" value="partner-pub-0861691574026297:eyw5n7-ugep" />
+                <input type="hidden" name="ie" value="ISO-8859-1" />
+                <input type="text" name="q" size="20" />
+                <input type="submit" name="sa" value="Go" />
+            </form>
+              <p class="searchtip" style="font-size: 90%">
+              General
+              </p>
+            <script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=cse-search-box&amp;lang=en"></script>
+              <form class="search" action="../search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Docs only
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="how-does-it-work">
+<span id="onlinehowworks"></span><h1>How does it work?<a class="headerlink" href="#how-does-it-work" title="Permalink to this headline">¶</a></h1>
+<p>The first stage of this is that there is now a JavaScript library, <a class="reference external" href="https://github.com/psychopy/psychojs">PsychoJS</a>, that mirrors the PsychoPy Python library classes and functions.</p>
+<p>PsychoPy Builder is effectively just writing a script for you based on the visual representation of your study so the new feature is for it simply to write a html/JavaScript/PsychoJS page instead.</p>
+<p>Modern browsers are remarkably powerful. Most browsers released since 2011 have allowed HTML5 which supports more flexible rendering of web pages (images and text can be positioned precisely enough to run “proper” behavioural experiments). Since 2013 most have supported WebGL. That allows graphics to be rendered really quickly using “hardware acceleration” on your graphics card. The result is rich pages that can be updated very rapidly and can be forced to sync to screen refresh, which is critical for stimulus timing.</p>
+<p>All this means we can do great things with online experiments that actually have good temporal precision!</p>
+<p>The way it works is that you have a web page containing JavaScript (generated by PsychoPy Builder). You upload that to a web server. The participant of your study uses their web browser to visit the page you’ve created with a standard URL you send them.</p>
+<p>Now, JavaScript executes on their computer (as opposed to scripts like PHP that operate on the server and aren’t directly visible to the viewer/browser). In this case the PsychoJS script will present a dialog box at the start of the study to get the participant ID and any other basic information you need. While that dialog box is presented the script will be downloading all your stimuli and files to the local computer and storing them in memory. When all the necessary files are downloaded the participant can press “OK” and the experiment will start.</p>
+<p>The experiment supports all the standard timing aspects of any PsychoPy Builder experiment; you can specify your stimuli in terms of time presented or number of screen refreshes etc (and the actual refresh rate of your participant’s computer will be stored in your data file). When it’s finished it saves the data into a comma-separated-value (CSV) file in the “data” folder on the web server. This looks very much like the standard CSV outputs of your same PsychoPy experiment run locally.</p>
+<p>Not all components are currently supported. Keep an eye on the <a class="reference internal" href="status.html#onlinestatus"><span class="std std-ref">Status of online options</span></a> page to see what objects you can use already.</p>
+<div class="section" id="how-does-this-compare-with-jspsych">
+<h2>How does this compare with jsPsych?<a class="headerlink" href="#how-does-this-compare-with-jspsych" title="Permalink to this headline">¶</a></h2>
+<p>The PsychoPy team doesn’t don’t know much about the underlying technology of <a class="reference external" href="http://docs.jspsych.org/">jsPsych</a> (e.g. its timing of stimuli and use of advanced graphics like WebGL) but one notable difference is the additional flexibility that PsychoPy provides in terms of creating your trials. In jsPsych you use one of the pre-programmed “types” of trial (like single stimulus or 2-alternative-forced-choice) and you have rather little flexibility over how that gets conducted. If you wanted to alter the positioning of the stimuli, for instance, in a 2-alternative-force-choice task or you wanted a stimulus to change in time (appear gradually or move location) then you would need to write a new trial “type” using raw javascript.</p>
+<p>PsychoPy, by comparison, is designed to give you total flexibility. You decide what constitutes a “trial” and how things should operate in time. We think that control is very important to creating a wide range of studies.</p>
+<p>Also, of course, there’s no Builder interface for jsPsych as far as we know, so you’ll need to know how to program in JavaScript.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../index.html">PsychoPy</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2018, Jonathan Peirce.
+      Last updated on Jul 25, 2018.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.7.0.
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-4089651-2', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+
+    <script type="text/javascript" src="http://www.ohloh.net/p/17081/widgets/project_partner_badge.js"></script>
+    </div>
+  </body>
+</html>

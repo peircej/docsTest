@@ -1,0 +1,666 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>joystick (pyglet and pygame) &mdash; PsychoPy v3.0</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '3.0.0b2',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="PsychoPy v3.0" href="../../index.html" />
+    <link rel="up" title="psychopy.hardware - hardware interfaces" href="../hardware.html" />
+    <link rel="next" title="labjacks (USB I/O devices)" href="labjack.html" />
+    <link rel="prev" title="iolab" href="iolab.html" /> 
+  </head>
+  <body>
+
+
+<div id="header"  style="background-color: white">
+<table width="100%" cellpadding="10">
+<tr><td style="text-align:left;vertical-align:middle">
+<a href='http://www.psychopy.org'><img src="../../_static/psychopyDocBanner2.gif" alt="PsychoPy logo" /></a>
+</td><td style="text-align:right;vertical-align:middle">
+<a href='http://www.nottingham.ac.uk'><img src=../../_static/UoN_Supported_RGBsm.png alt="University of Nottingham" /></a>
+</td></table>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="labjack.html" title="labjacks (USB I/O devices)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="iolab.html" title="iolab"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">PsychoPy</a> &raquo;</li>
+          <li><a href="../../documentation.html" >Documentation</a> &raquo;</li>
+          <li><a href="../api.html" >Reference Manual (API)</a> &raquo;</li>
+          <li><a href="../hardware.html" accesskey="U"><code class="docutils literal notranslate"><span class="pre">psychopy.hardware</span></code> - hardware interfaces</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="iolab.html"
+                                  title="previous chapter">iolab</a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="labjack.html"
+                                  title="next chapter">labjacks (USB I/O devices)</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="../../_sources/api/hardware/joystick.rst.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+
+            <h3>Quick links</h3>
+            <ul>
+            <li><a href="http://psychopy.org/installation.html"><strong>Download</strong></a></li>
+            <li><a href="http://discourse.psychopy.org">Forum</a></li>
+            <li><a href="http://twitter.com/psychopy">Twitter</a></li>
+            </ul>
+
+            <!-- facebook like -->
+            <div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=122767831154831&amp;xfbml=1"></script>
+            <fb:like href="http://www.facebook.com/pages/PsychoPy/140222406067597" send="false" layout="button_count" width="300" show_faces="false" action="like" font=""></fb:like>
+
+            <!-- google +1 -->
+            <!-- Place this tag where you want the +1 button to render -->
+            <g:plusone count="false" href="http://www.psychopy.org"></g:plusone>
+            <!-- Place this tag after the last plusone tag -->
+            <script type="text/javascript">
+              window.___gcfg = {lang: 'en-GB'};
+              (function() {
+                var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                po.src = 'https://apis.google.com/js/plusone.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+              })();
+            </script>
+
+          <div id="searchbox" style="display: none">
+            <h3>Searches</h3>
+            <form action="http://www.google.com/cse" id="cse-search-box">
+                <input type="hidden" name="cx" value="partner-pub-0861691574026297:eyw5n7-ugep" />
+                <input type="hidden" name="ie" value="ISO-8859-1" />
+                <input type="text" name="q" size="20" />
+                <input type="submit" name="sa" value="Go" />
+            </form>
+              <p class="searchtip" style="font-size: 90%">
+              General
+              </p>
+            <script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=cse-search-box&amp;lang=en"></script>
+              <form class="search" action="../../search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Docs only
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="joystick-pyglet-and-pygame">
+<span id="joystick"></span><h1>joystick (pyglet and pygame)<a class="headerlink" href="#joystick-pyglet-and-pygame" title="Permalink to this headline">¶</a></h1>
+<p>AT THE MOMENT JOYSTICK DOES NOT APPEAR TO WORK UNDER PYGLET. We need someone motivated and capable to go and get this right (problem is with event polling under pyglet)</p>
+<span class="target" id="module-psychopy.hardware.joystick"></span><p>Control joysticks and gamepads from within PsychoPy.</p>
+<p>You do need a window (and you need to be flipping it) for the joystick to be
+updated.</p>
+<dl class="docutils">
+<dt>Known issues:</dt>
+<dd><ul class="first last simple">
+<li>currently under pyglet the joystick axes initialise to a value of zero
+and stay like this until the first time that axis moves</li>
+<li>currently pygame (1.9.1) spits out lots of debug messages about the
+joystick and these can’t be turned off :-/</li>
+</ul>
+</dd>
+</dl>
+<p>Typical usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">psychopy.hardware</span> <span class="k">import</span> <span class="n">joystick</span>
+<span class="kn">from</span> <span class="nn">psychopy</span> <span class="k">import</span> <span class="n">visual</span>
+
+<span class="n">joystick</span><span class="o">.</span><span class="n">backend</span><span class="o">=</span><span class="s1">&#39;pyglet&#39;</span>  <span class="c1"># must match the Window</span>
+<span class="n">win</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">Window</span><span class="p">([</span><span class="mi">400</span><span class="p">,</span><span class="mi">400</span><span class="p">],</span> <span class="n">winType</span><span class="o">=</span><span class="s1">&#39;pyglet&#39;</span><span class="p">)</span>
+
+<span class="n">nJoys</span> <span class="o">=</span> <span class="n">joystick</span><span class="o">.</span><span class="n">getNumJoysticks</span><span class="p">()</span>  <span class="c1"># to check if we have any</span>
+<span class="nb">id</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">joy</span> <span class="o">=</span> <span class="n">joystick</span><span class="o">.</span><span class="n">Joystick</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>  <span class="c1"># id must be &lt;= nJoys - 1</span>
+
+<span class="n">nAxes</span> <span class="o">=</span> <span class="n">joy</span><span class="o">.</span><span class="n">getNumAxes</span><span class="p">()</span>  <span class="c1"># for interest</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>  <span class="c1"># while presenting stimuli</span>
+    <span class="n">joy</span><span class="o">.</span><span class="n">getX</span><span class="p">()</span>
+    <span class="c1"># ...</span>
+    <span class="n">win</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>  <span class="c1"># flipping implicitly updates the joystick info</span>
+</pre></div>
+</div>
+<dl class="class">
+<dt id="psychopy.hardware.joystick.Joystick">
+<em class="property">class </em><code class="descclassname">psychopy.hardware.joystick.</code><code class="descname">Joystick</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.joystick.Joystick" title="Permalink to this definition">¶</a></dt>
+<dd><p>An object to control a multi-axis joystick or gamepad.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Known issues:</th><td class="field-body">Currently under pyglet backends the axis values initialise to zero
+rather than reading the current true value. This gets fixed on the
+first change to each axis.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="psychopy.hardware.joystick.Joystick.getAllAxes">
+<code class="descname">getAllAxes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.joystick.Joystick.getAllAxes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of all current axis values.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.hardware.joystick.Joystick.getAllButtons">
+<code class="descname">getAllButtons</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.joystick.Joystick.getAllButtons" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the state of all buttons as a list.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.hardware.joystick.Joystick.getAllHats">
+<code class="descname">getAllHats</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.joystick.Joystick.getAllHats" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the current values of all available hats as a list of tuples.</p>
+<p>Each value is a tuple (x, y) where x and y can be -1, 0, +1</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.hardware.joystick.Joystick.getAxis">
+<code class="descname">getAxis</code><span class="sig-paren">(</span><em>axisId</em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.joystick.Joystick.getAxis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the value of an axis by an integer id.</p>
+<p>(from 0 to number of axes - 1)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.hardware.joystick.Joystick.getButton">
+<code class="descname">getButton</code><span class="sig-paren">(</span><em>buttonId</em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.joystick.Joystick.getButton" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the state of a given button.</p>
+<p>buttonId should be a value from 0 to the number of buttons-1</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.hardware.joystick.Joystick.getHat">
+<code class="descname">getHat</code><span class="sig-paren">(</span><em>hatId=0</em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.joystick.Joystick.getHat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the position of a particular hat.</p>
+<p>The position returned is an (x, y) tuple where x and y
+can be -1, 0 or +1</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.hardware.joystick.Joystick.getName">
+<code class="descname">getName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.joystick.Joystick.getName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the manufacturer-defined name describing the device.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.hardware.joystick.Joystick.getNumAxes">
+<code class="descname">getNumAxes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.joystick.Joystick.getNumAxes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the number of joystick axes found.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.hardware.joystick.Joystick.getNumButtons">
+<code class="descname">getNumButtons</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.joystick.Joystick.getNumButtons" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the number of digital buttons on the device.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.hardware.joystick.Joystick.getNumHats">
+<code class="descname">getNumHats</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.joystick.Joystick.getNumHats" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the number of hats on this joystick.</p>
+<p>The GLFW backend makes no distinction between hats and buttons. Calling
+‘getNumHats()’ will return 0.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.hardware.joystick.Joystick.getX">
+<code class="descname">getX</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.joystick.Joystick.getX" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the X axis value (equivalent to joystick.getAxis(0)).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.hardware.joystick.Joystick.getY">
+<code class="descname">getY</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.joystick.Joystick.getY" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the Y axis value (equivalent to joystick.getAxis(1)).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.hardware.joystick.Joystick.getZ">
+<code class="descname">getZ</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.joystick.Joystick.getZ" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the Z axis value (equivalent to joystick.getAxis(2)).</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="psychopy.hardware.joystick.XboxController">
+<em class="property">class </em><code class="descclassname">psychopy.hardware.joystick.</code><code class="descname">XboxController</code><span class="sig-paren">(</span><em>id</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.joystick.XboxController" title="Permalink to this definition">¶</a></dt>
+<dd><p>Joystick template class for the XBox 360 controller.</p>
+<p>Usage:</p>
+<blockquote>
+<div>xbctrl = XboxController(0)  # joystick ID
+y_btn_state = xbctrl.y  # get the state of the ‘Y’ button</div></blockquote>
+<dl class="method">
+<dt id="psychopy.hardware.joystick.XboxController.get_a">
+<code class="descname">get_a</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.joystick.XboxController.get_a" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the ‘A’ button state.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">bool, True if pressed down</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.hardware.joystick.XboxController.get_b">
+<code class="descname">get_b</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.joystick.XboxController.get_b" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the ‘B’ button state.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">bool, True if pressed down</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.hardware.joystick.XboxController.get_back">
+<code class="descname">get_back</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.joystick.XboxController.get_back" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get ‘back’ button state (button to the right of the left joystick).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">bool, True if pressed down</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.hardware.joystick.XboxController.get_hat_axis">
+<code class="descname">get_hat_axis</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.joystick.XboxController.get_hat_axis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the states of the hat (sometimes called the ‘directional pad’).
+The hat can only indicate direction but not displacement.</p>
+<p>This function reports hat values in the same way as a joystick so it may
+be used interchangeably with existing analog joystick code.</p>
+<p>Returns a tuple (X,Y) indicating which direction the hat is pressed
+between -1.0 and +1.0. Positive values indicate presses in the right or
+up direction.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">tuple, zero centered X, Y values.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.hardware.joystick.XboxController.get_left_shoulder">
+<code class="descname">get_left_shoulder</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.joystick.XboxController.get_left_shoulder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get left ‘shoulder’ trigger state.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">bool, True if pressed down</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.hardware.joystick.XboxController.get_left_thumbstick">
+<code class="descname">get_left_thumbstick</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.joystick.XboxController.get_left_thumbstick" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the state of the left joystick button; activated by pressing
+down on the stick.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">bool, True if pressed down</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.hardware.joystick.XboxController.get_left_thumbstick_axis">
+<code class="descname">get_left_thumbstick_axis</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.joystick.XboxController.get_left_thumbstick_axis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the axis displacement values of the left thumbstick.</p>
+<p>Returns a tuple (X,Y) indicating thumbstick displacement between -1.0
+and +1.0. Positive values indicate the stick is displaced right or up.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">tuple, zero centered X, Y values.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.hardware.joystick.XboxController.get_named_buttons">
+<code class="descname">get_named_buttons</code><span class="sig-paren">(</span><em>button_names</em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.joystick.XboxController.get_named_buttons" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the states of multiple buttons using names. A list of button
+states is returned for each string in list ‘names’.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>button_names</strong> – tuple or list of button names</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.hardware.joystick.XboxController.get_right_shoulder">
+<code class="descname">get_right_shoulder</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.joystick.XboxController.get_right_shoulder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get right ‘shoulder’ trigger state.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">bool, True if pressed down</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.hardware.joystick.XboxController.get_right_thumbstick">
+<code class="descname">get_right_thumbstick</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.joystick.XboxController.get_right_thumbstick" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the state of the right joystick button; activated by pressing
+down on the stick.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">bool, True if pressed down</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.hardware.joystick.XboxController.get_right_thumbstick_axis">
+<code class="descname">get_right_thumbstick_axis</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.joystick.XboxController.get_right_thumbstick_axis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the axis displacement values of the right thumbstick.</p>
+<p>Returns a tuple (X,Y) indicating thumbstick displacement between -1.0
+and +1.0. Positive values indicate the stick is displaced right or up.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">tuple, zero centered X, Y values.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.hardware.joystick.XboxController.get_start">
+<code class="descname">get_start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.joystick.XboxController.get_start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get ‘start’ button state (button to the left of the ‘X’ button).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">bool, True if pressed down</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.hardware.joystick.XboxController.get_trigger_axis">
+<code class="descname">get_trigger_axis</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.joystick.XboxController.get_trigger_axis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the axis displacement values of both index triggers.</p>
+<p>Returns a tuple (L,R) indicating index trigger displacement between -1.0
+and +1.0. Values increase from -1.0 to 1.0 the further a trigger is
+pushed.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">tuple, zero centered L, R values.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.hardware.joystick.XboxController.get_x">
+<code class="descname">get_x</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.joystick.XboxController.get_x" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the ‘X’ button state.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">bool, True if pressed down</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.hardware.joystick.XboxController.get_y">
+<code class="descname">get_y</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.joystick.XboxController.get_y" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the ‘Y’ button state.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">bool, True if pressed down</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="psychopy.hardware.joystick.getNumJoysticks">
+<code class="descclassname">psychopy.hardware.joystick.</code><code class="descname">getNumJoysticks</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.joystick.getNumJoysticks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a count of the number of joysticks available.</p>
+</dd></dl>
+
+<dl class="class">
+<dt>
+<em class="property">class </em><code class="descclassname">psychopy.hardware.joystick.</code><code class="descname">Joystick</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span></dt>
+<dd><p>An object to control a multi-axis joystick or gamepad.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Known issues:</th><td class="field-body">Currently under pyglet backends the axis values initialise to zero
+rather than reading the current true value. This gets fixed on the
+first change to each axis.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt>
+<code class="descname">getAllAxes</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Get a list of all current axis values.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">getAllButtons</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Get the state of all buttons as a list.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">getAllHats</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Get the current values of all available hats as a list of tuples.</p>
+<p>Each value is a tuple (x, y) where x and y can be -1, 0, +1</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">getAxis</code><span class="sig-paren">(</span><em>axisId</em><span class="sig-paren">)</span></dt>
+<dd><p>Get the value of an axis by an integer id.</p>
+<p>(from 0 to number of axes - 1)</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">getButton</code><span class="sig-paren">(</span><em>buttonId</em><span class="sig-paren">)</span></dt>
+<dd><p>Get the state of a given button.</p>
+<p>buttonId should be a value from 0 to the number of buttons-1</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">getHat</code><span class="sig-paren">(</span><em>hatId=0</em><span class="sig-paren">)</span></dt>
+<dd><p>Get the position of a particular hat.</p>
+<p>The position returned is an (x, y) tuple where x and y
+can be -1, 0 or +1</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">getName</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Return the manufacturer-defined name describing the device.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">getNumAxes</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Return the number of joystick axes found.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">getNumButtons</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Return the number of digital buttons on the device.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">getNumHats</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Get the number of hats on this joystick.</p>
+<p>The GLFW backend makes no distinction between hats and buttons. Calling
+‘getNumHats()’ will return 0.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">getX</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Return the X axis value (equivalent to joystick.getAxis(0)).</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">getY</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Return the Y axis value (equivalent to joystick.getAxis(1)).</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">getZ</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Return the Z axis value (equivalent to joystick.getAxis(2)).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.hardware.joystick.Joystick.next">
+<code class="descname">next</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.joystick.Joystick.next" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="labjack.html" title="labjacks (USB I/O devices)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="iolab.html" title="iolab"
+             >previous</a> |</li>
+        <li><a href="../../index.html">PsychoPy</a> &raquo;</li>
+          <li><a href="../../documentation.html" >Documentation</a> &raquo;</li>
+          <li><a href="../api.html" >Reference Manual (API)</a> &raquo;</li>
+          <li><a href="../hardware.html" ><code class="docutils literal notranslate"><span class="pre">psychopy.hardware</span></code> - hardware interfaces</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2018, Jonathan Peirce.
+      Last updated on Jul 25, 2018.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.7.0.
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-4089651-2', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+
+    <script type="text/javascript" src="http://www.ohloh.net/p/17081/widgets/project_partner_badge.js"></script>
+    </div>
+  </body>
+</html>

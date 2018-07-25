@@ -1,0 +1,296 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>NoiseStim &mdash; PsychoPy v3.0</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '3.0.0b2',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="PsychoPy v3.0" href="../../index.html" />
+    <link rel="up" title="psychopy.visual - many visual stimuli" href="../visual.html" />
+    <link rel="next" title="PatchStim (deprecated)" href="patchstim.html" />
+    <link rel="prev" title="MovieStim" href="moviestim.html" /> 
+  </head>
+  <body>
+
+
+<div id="header"  style="background-color: white">
+<table width="100%" cellpadding="10">
+<tr><td style="text-align:left;vertical-align:middle">
+<a href='http://www.psychopy.org'><img src="../../_static/psychopyDocBanner2.gif" alt="PsychoPy logo" /></a>
+</td><td style="text-align:right;vertical-align:middle">
+<a href='http://www.nottingham.ac.uk'><img src=../../_static/UoN_Supported_RGBsm.png alt="University of Nottingham" /></a>
+</td></table>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="patchstim.html" title="PatchStim (deprecated)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="moviestim.html" title="MovieStim"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">PsychoPy</a> &raquo;</li>
+          <li><a href="../../documentation.html" >Documentation</a> &raquo;</li>
+          <li><a href="../api.html" >Reference Manual (API)</a> &raquo;</li>
+          <li><a href="../visual.html" accesskey="U"><code class="docutils literal notranslate"><span class="pre">psychopy.visual</span></code> - many visual stimuli</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3><a href="../../index.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">NoiseStim</span></code></a><ul>
+<li><a class="reference internal" href="#attributes">Attributes</a></li>
+<li><a class="reference internal" href="#details">Details</a></li>
+</ul>
+</li>
+</ul>
+
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="moviestim.html"
+                                  title="previous chapter"><code class="docutils literal notranslate"><span class="pre">MovieStim</span></code></a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="patchstim.html"
+                                  title="next chapter"><code class="docutils literal notranslate"><span class="pre">PatchStim</span></code> (deprecated)</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="../../_sources/api/visual/noisestim.rst.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+
+            <h3>Quick links</h3>
+            <ul>
+            <li><a href="http://psychopy.org/installation.html"><strong>Download</strong></a></li>
+            <li><a href="http://discourse.psychopy.org">Forum</a></li>
+            <li><a href="http://twitter.com/psychopy">Twitter</a></li>
+            </ul>
+
+            <!-- facebook like -->
+            <div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=122767831154831&amp;xfbml=1"></script>
+            <fb:like href="http://www.facebook.com/pages/PsychoPy/140222406067597" send="false" layout="button_count" width="300" show_faces="false" action="like" font=""></fb:like>
+
+            <!-- google +1 -->
+            <!-- Place this tag where you want the +1 button to render -->
+            <g:plusone count="false" href="http://www.psychopy.org"></g:plusone>
+            <!-- Place this tag after the last plusone tag -->
+            <script type="text/javascript">
+              window.___gcfg = {lang: 'en-GB'};
+              (function() {
+                var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                po.src = 'https://apis.google.com/js/plusone.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+              })();
+            </script>
+
+          <div id="searchbox" style="display: none">
+            <h3>Searches</h3>
+            <form action="http://www.google.com/cse" id="cse-search-box">
+                <input type="hidden" name="cx" value="partner-pub-0861691574026297:eyw5n7-ugep" />
+                <input type="hidden" name="ie" value="ISO-8859-1" />
+                <input type="text" name="q" size="20" />
+                <input type="submit" name="sa" value="Go" />
+            </form>
+              <p class="searchtip" style="font-size: 90%">
+              General
+              </p>
+            <script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=cse-search-box&amp;lang=en"></script>
+              <form class="search" action="../../search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Docs only
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="noisestim">
+<h1><code class="xref py py-class docutils literal notranslate"><span class="pre">NoiseStim</span></code><a class="headerlink" href="#noisestim" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="attributes">
+<h2>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="details">
+<h2>Details<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="psychopy.visual.NoiseStim">
+<em class="property">class </em><code class="descclassname">psychopy.visual.</code><code class="descname">NoiseStim</code><span class="sig-paren">(</span><em>win</em>, <em>mask='none'</em>, <em>units=''</em>, <em>pos=(0.0</em>, <em>0.0)</em>, <em>size=None</em>, <em>sf=None</em>, <em>ori=0.0</em>, <em>phase=(0.0</em>, <em>0.0)</em>, <em>noiseType='none'</em>, <em>noiseElementSize='16'</em>, <em>noiseBaseSf='1'</em>, <em>noiseBW='1'</em>, <em>noiseBWO='30'</em>, <em>noiseFractalPower='0.0'</em>, <em>noiseFilterUpper='50'</em>, <em>noiseFilterLower='0'</em>, <em>noiseFilterOrder='0.0'</em>, <em>noiseClip='1'</em>, <em>noiseImage='None'</em>, <em>texRes=128</em>, <em>rgb=None</em>, <em>dkl=None</em>, <em>lms=None</em>, <em>color=(1.0</em>, <em>1.0</em>, <em>1.0)</em>, <em>colorSpace='rgb'</em>, <em>contrast=0.5</em>, <em>opacity=1.0</em>, <em>depth=0</em>, <em>rgbPedestal=(0.0</em>, <em>0.0</em>, <em>0.0)</em>, <em>interpolate=False</em>, <em>blendmode='avg'</em>, <em>name=None</em>, <em>autoLog=None</em>, <em>autoDraw=False</em>, <em>maskParams=None</em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.visual.NoiseStim" title="Permalink to this definition">¶</a></dt>
+<dd><p>A stimulus with 2 textures: a radom noise sample and a mask</p>
+<p><strong>Example</strong>:</p>
+<dl class="docutils">
+<dt>noise1 = noise = visual.NoiseStim(</dt>
+<dd><blockquote class="first">
+<div>win=win, name=’noise’,units=’pix’, 
+noiseImage=’testImg.jpg’, mask=’circle’,
+ori=1.0, pos=(0, 0), size=(512, 512), sf=None, phase=0,
+color=[1,1,1], colorSpace=’rgb’, opacity=1, blendmode=’add’, contrast=1.0,
+texRes=512,
+noiseType=’Gabor’, noiseElementSize=4, noiseBaseSf=32.0/512,
+noiseBW=1.0, noiseBWO=30, noiseFractalPower=-1,noiseFilterLower=3/512, noiseFilterUpper=8.0/512.0, 
+noiseFilterOrder=3.0, noiseClip=3.0, interpolate=False, depth=-1.0)</div></blockquote>
+<p class="last"># gives a circular patch of noise made up of scattered Gabor elements with peak frequency = 32.0/512 cycles per pixel, 
+# orientation = 0 , frequency bandwidth = 1 octave and orientation bandwidth 30 degrees</p>
+</dd>
+</dl>
+<p><strong>Types of noise available</strong>
+Binary, Normal, Uniform - pixel based noise samples drawn from a binary (blank and white), normal or uniform distribution respectively. Binary noise is always exactly zero mean, Normal and Uniform are approximately so.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Parameters -    noiseElementSize - (can be a tuple) defines the size of the noise elements in the components units.</dt>
+<dd><dl class="first last docutils">
+<dt>noiseClip the values in normally distributed noise are divided by noiseClip to limit excessively high or low values.</dt>
+<dd>However, values can still go out of range -1 to 1 whih will throw a soft error message high values of noiseClip are recommended if using ‘Normal’</dd>
+</dl>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="docutils">
+<dt>Gabor, Isotropic - Effectively a dense scattering of Gabor elements with random amplitude and fixed orientation for Gabor or random orientation for Isotropic noise.</dt>
+<dd><dl class="first docutils">
+<dt>Parameters -    noiseBaseSf - centre spatial frequency in the component units. </dt>
+<dd>noiseBW - spatial frequency bandwidth full width half height in octaves.
+ori - centre orientation for Gabor noise (works as for gratingStim so twists the final image at render time).
+noiseBWO - orientation bandwidth for Gabor noise full width half height in degrees.</dd>
+</dl>
+<p class="last">In practice the desired amplitude spectrum for the noise is built in Fourier space with a random phase spectrum. DC term is set to zero - ie zero mean.</p>
+</dd>
+<dt>Filtered - A noise sample that has been filtered with a low, high or bandpass Butterworth filter. The initial sample can have its spectrum skewed towards low or high frequencies</dt>
+<dd><p class="first">The contrast of the noise falls by half its maximum (3dB) at the cutoff frequencies.
+Parameters -    noiseFilterUpper - upper cutoff frequency - if greater than texRes/2 cycles per image low pass filter used.</p>
+<blockquote class="last">
+<div>noiseFilterLower - Lower cutoff frequency - if zero low pass filter used.
+noiseFilterOrder - The order of the filter controls the steepness of the falloff outside the passband is zero no filter is applied.
+noiseFractalPower - spectrum = f^noiseFractalPower  - determines the spatial frequency bias of the initial noise sample. 0 = flat spectrum, negative = low frequency bias, positive = high frequency bias, -1 = fractal or brownian noise.
+noiseClip - determines clipping values and rescaling factor such that final rms contrast is close to that requested by contrast parameter while keeping pixel values in range -1, 1.</div></blockquote>
+</dd>
+<dt>White - A short cut to obtain noise with a flat, unfiltered spectrum</dt>
+<dd><blockquote class="first">
+<div>noiseClip - determines clipping values and rescaling factor such that final rms contrast is close to that requested by contrast parameter while keeping pixel values in range -1, 1.</div></blockquote>
+<p class="last">In practice the desired amplitude spectrum is built in the Fourier Domain with a random phase spectrum. DC term is set to zero - ie zero mean
+Note despite name the noise contains all grey levels.</p>
+</dd>
+<dt>Image - A noise sample whose spatial frequency spectrum is taken from the supplied image.</dt>
+<dd><dl class="first docutils">
+<dt>Parameters -    noiseImage name of nparray or image file from which to take spectrum - should be same size as largest side requested for component if units is pix or texRes x texRes otherwise</dt>
+<dd>noiseClip - determines clipping values and rescaling factor such that final rms contrast is close to that requested by contrast parameter while keeping pixel values in range -1, 1.</dd>
+</dl>
+<p class="last">In practice the desired amplitude spectrum is taken from the image and paired with a random phase spectrum. DC term is set to zero - ie zero mean</p>
+</dd>
+</dl>
+<p><strong>Updating noise samples and timing</strong>
+The noise is rebuilt at next call of the draw function whenever a parameter starting ‘noise’ is notionally changed even if the value does not actually change every time. eg. setting a parameter to update every frame will cause a new noise sample on every frame but see below.
+A rebuild can also be forced at any time using the buildNoise() function.
+The updateNoise() function can be used at any time to produce a new random saple of noise without doing a full build. ie it is quicker than a full build.
+Both buildNoise and updateNoise can be slow for large samples. 
+Samples of Binary, Normal or Uniform noise can usually be made at frame rate using noiseUpdate. 
+Updating or building other noise types at frame rate may result in dropped frames. 
+An alternative is to build a large sample of noise at the start of the routien and place it off the screen then cut a samples out of this at random locations and feed that as a numpy array into the texture of a visible gratingStim.</p>
+<p><strong>Notes on size</strong>
+If units = pix and noiseType = Binary, Normal or Uniform will make noise sample of requested size.
+If units = pix and noiseType is Gabor, Isotropic, Filtered, White, Coloured or Image will make square noise sample with side length equal that of the largest dimetions requested.
+if units is not pix will make square noise sample with side length equal to texRes then rescale to present.</p>
+<p><strong>Notes on interpolation</strong>
+For pixel based noise interpolation = nearest is usually best.
+For other noise types linear is better if the size of the noise sample does not match the final size of the image well.</p>
+<p><strong>Notes on frequency</strong>
+Frequencies for cutoffs etc are converted between units for you but can be counter intuitive. 1/size is always 1 cycle per image.
+For the sf (final spatial frequency) parameter itself 1/size (or None for units pix) will faithfully represent the image without further scaling.</p>
+<p>Filter cuttoff and Gabor/Isotropic base frequencies should not be too high you should aim to keep them below 0.5 c/pixel on the screen.
+The function will produce an error when it can’t draw the stimulus in the buffer but it may still be wrong when displayed.</p>
+<p><strong>Notes on orientation and phase</strong>
+The ori parameter twists the final image so the samples in noiseType Binary, Normal or Uniform will no longer be alighned to the sides of the monitor if ori is not a multiple of 90.
+Most other noise types look broadly the same for all values of ori but the specific sample shown can be made to rotate by changing ori.
+The dominant orientation for Gabor noise is determined by ori at render time, not before.</p>
+<p>The phase parameter similarly shifts the sample around within the display window at render time and will not choose new random phases for the noise sample.</p>
+<dl class="method">
+<dt id="psychopy.visual.NoiseStim.mro">
+<code class="descname">mro</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; list<a class="headerlink" href="#psychopy.visual.NoiseStim.mro" title="Permalink to this definition">¶</a></dt>
+<dd><p>return a type’s method resolution order</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="patchstim.html" title="PatchStim (deprecated)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="moviestim.html" title="MovieStim"
+             >previous</a> |</li>
+        <li><a href="../../index.html">PsychoPy</a> &raquo;</li>
+          <li><a href="../../documentation.html" >Documentation</a> &raquo;</li>
+          <li><a href="../api.html" >Reference Manual (API)</a> &raquo;</li>
+          <li><a href="../visual.html" ><code class="docutils literal notranslate"><span class="pre">psychopy.visual</span></code> - many visual stimuli</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2018, Jonathan Peirce.
+      Last updated on Jul 25, 2018.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.7.0.
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-4089651-2', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+
+    <script type="text/javascript" src="http://www.ohloh.net/p/17081/widgets/project_partner_badge.js"></script>
+    </div>
+  </body>
+</html>

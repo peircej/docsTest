@@ -1,0 +1,440 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>RatingScale &mdash; PsychoPy v3.0</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '3.0.0b2',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="PsychoPy v3.0" href="../../index.html" />
+    <link rel="up" title="psychopy.visual - many visual stimuli" href="../visual.html" />
+    <link rel="next" title="Rect" href="rect.html" />
+    <link rel="prev" title="RadialStim" href="radialstim.html" /> 
+  </head>
+  <body>
+
+
+<div id="header"  style="background-color: white">
+<table width="100%" cellpadding="10">
+<tr><td style="text-align:left;vertical-align:middle">
+<a href='http://www.psychopy.org'><img src="../../_static/psychopyDocBanner2.gif" alt="PsychoPy logo" /></a>
+</td><td style="text-align:right;vertical-align:middle">
+<a href='http://www.nottingham.ac.uk'><img src=../../_static/UoN_Supported_RGBsm.png alt="University of Nottingham" /></a>
+</td></table>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="rect.html" title="Rect"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="radialstim.html" title="RadialStim"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">PsychoPy</a> &raquo;</li>
+          <li><a href="../../documentation.html" >Documentation</a> &raquo;</li>
+          <li><a href="../api.html" >Reference Manual (API)</a> &raquo;</li>
+          <li><a href="../visual.html" accesskey="U"><code class="docutils literal notranslate"><span class="pre">psychopy.visual</span></code> - many visual stimuli</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="radialstim.html"
+                                  title="previous chapter"><code class="docutils literal notranslate"><span class="pre">RadialStim</span></code></a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="rect.html"
+                                  title="next chapter"><code class="docutils literal notranslate"><span class="pre">Rect</span></code></a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="../../_sources/api/visual/ratingscale.rst.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+
+            <h3>Quick links</h3>
+            <ul>
+            <li><a href="http://psychopy.org/installation.html"><strong>Download</strong></a></li>
+            <li><a href="http://discourse.psychopy.org">Forum</a></li>
+            <li><a href="http://twitter.com/psychopy">Twitter</a></li>
+            </ul>
+
+            <!-- facebook like -->
+            <div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=122767831154831&amp;xfbml=1"></script>
+            <fb:like href="http://www.facebook.com/pages/PsychoPy/140222406067597" send="false" layout="button_count" width="300" show_faces="false" action="like" font=""></fb:like>
+
+            <!-- google +1 -->
+            <!-- Place this tag where you want the +1 button to render -->
+            <g:plusone count="false" href="http://www.psychopy.org"></g:plusone>
+            <!-- Place this tag after the last plusone tag -->
+            <script type="text/javascript">
+              window.___gcfg = {lang: 'en-GB'};
+              (function() {
+                var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                po.src = 'https://apis.google.com/js/plusone.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+              })();
+            </script>
+
+          <div id="searchbox" style="display: none">
+            <h3>Searches</h3>
+            <form action="http://www.google.com/cse" id="cse-search-box">
+                <input type="hidden" name="cx" value="partner-pub-0861691574026297:eyw5n7-ugep" />
+                <input type="hidden" name="ie" value="ISO-8859-1" />
+                <input type="text" name="q" size="20" />
+                <input type="submit" name="sa" value="Go" />
+            </form>
+              <p class="searchtip" style="font-size: 90%">
+              General
+              </p>
+            <script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=cse-search-box&amp;lang=en"></script>
+              <form class="search" action="../../search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Docs only
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="ratingscale">
+<h1><code class="xref py py-class docutils literal notranslate"><span class="pre">RatingScale</span></code><a class="headerlink" href="#ratingscale" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="psychopy.visual.RatingScale">
+<em class="property">class </em><code class="descclassname">psychopy.visual.</code><code class="descname">RatingScale</code><span class="sig-paren">(</span><em>win</em>, <em>scale='&lt;default&gt;'</em>, <em>choices=None</em>, <em>low=1</em>, <em>high=7</em>, <em>precision=1</em>, <em>labels=()</em>, <em>tickMarks=None</em>, <em>tickHeight=1.0</em>, <em>marker='triangle'</em>, <em>markerStart=None</em>, <em>markerColor=None</em>, <em>markerExpansion=1</em>, <em>singleClick=False</em>, <em>disappear=False</em>, <em>textSize=1.0</em>, <em>textColor='LightGray'</em>, <em>textFont='Helvetica Bold'</em>, <em>showValue=True</em>, <em>showAccept=True</em>, <em>acceptKeys='return'</em>, <em>acceptPreText='key</em>, <em>click'</em>, <em>acceptText='accept?'</em>, <em>acceptSize=1.0</em>, <em>leftKeys='left'</em>, <em>rightKeys='right'</em>, <em>respKeys=()</em>, <em>lineColor='White'</em>, <em>skipKeys='tab'</em>, <em>mouseOnly=False</em>, <em>noMouse=False</em>, <em>size=1.0</em>, <em>stretch=1.0</em>, <em>pos=None</em>, <em>minTime=0.4</em>, <em>maxTime=0.0</em>, <em>flipVert=False</em>, <em>depth=0</em>, <em>name=None</em>, <em>autoLog=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.visual.RatingScale" title="Permalink to this definition">¶</a></dt>
+<dd><p>A class for obtaining ratings, e.g., on a 1-to-7 or categorical scale.</p>
+<p>A RatingScale instance is a re-usable visual object having a <code class="docutils literal notranslate"><span class="pre">draw()</span></code>
+method, with customizable appearance and response options. <code class="docutils literal notranslate"><span class="pre">draw()</span></code>
+displays the rating scale, handles the subject’s mouse or key responses,
+and updates the display. When the subject accepts a selection,
+<code class="docutils literal notranslate"><span class="pre">.noResponse</span></code> goes <code class="docutils literal notranslate"><span class="pre">False</span></code> (i.e., there is a response).</p>
+<p>You can call the <code class="docutils literal notranslate"><span class="pre">getRating()</span></code> method anytime to get a rating,
+<code class="docutils literal notranslate"><span class="pre">getRT()</span></code> to get the decision time, or <code class="docutils literal notranslate"><span class="pre">getHistory()</span></code> to obtain
+the entire set of (rating, RT) pairs.</p>
+<p>There are five main elements of a rating scale: the <cite>scale</cite>
+(text above the line intended to be a reminder of how to use the scale),
+the <cite>line</cite> (with tick marks), the <cite>marker</cite> (a moveable visual indicator
+on the line), the <cite>labels</cite> (text below the line that label specific
+points), and the <cite>accept</cite> button. The appearance and function of
+elements can be customized by the experimenter; it is not possible
+to orient a rating scale to be vertical. Multiple scales can be
+displayed at the same time, and continuous real-time ratings can be
+obtained from the history.</p>
+<p>The Builder RatingScale component gives a restricted set of options,
+but also allows full control over a RatingScale via the
+‘customize_everything’ field.</p>
+<p>A RatingScale instance has no idea what else is on the screen.
+The experimenter has to draw the item to be rated, and handle <cite>escape</cite>
+to break or quit, if desired. The subject can use the mouse or keys to
+respond. Direction keys (left, right) will move the marker in the
+smallest available increment (e.g., 1/10th of a tick-mark if
+precision = 10).</p>
+<p><strong>Example 1</strong>:</p>
+<blockquote>
+<div><p>A basic 7-point scale:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ratingScale</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">RatingScale</span><span class="p">(</span><span class="n">win</span><span class="p">)</span>
+<span class="n">item</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">statement</span><span class="p">,</span> <span class="n">question</span><span class="p">,</span> <span class="n">image</span><span class="p">,</span> <span class="n">movie</span><span class="p">,</span> <span class="o">...&gt;</span>
+<span class="k">while</span> <span class="n">ratingScale</span><span class="o">.</span><span class="n">noResponse</span><span class="p">:</span>
+    <span class="n">item</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+    <span class="n">ratingScale</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+    <span class="n">win</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+<span class="n">rating</span> <span class="o">=</span> <span class="n">ratingScale</span><span class="o">.</span><span class="n">getRating</span><span class="p">()</span>
+<span class="n">decisionTime</span> <span class="o">=</span> <span class="n">ratingScale</span><span class="o">.</span><span class="n">getRT</span><span class="p">()</span>
+<span class="n">choiceHistory</span> <span class="o">=</span> <span class="n">ratingScale</span><span class="o">.</span><span class="n">getHistory</span><span class="p">()</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>Example 2</strong>:</p>
+<blockquote>
+<div><p>For fMRI, sometimes only a keyboard can be used. If your response
+box sends keys 1-4, you could specify left, right, and accept keys,
+and not need a mouse:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ratingScale</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">RatingScale</span><span class="p">(</span>
+    <span class="n">win</span><span class="p">,</span> <span class="n">low</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">markerStart</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+    <span class="n">leftKeys</span><span class="o">=</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="n">rightKeys</span> <span class="o">=</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="n">acceptKeys</span><span class="o">=</span><span class="s1">&#39;4&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>Example 3</strong>:</p>
+<blockquote>
+<div><p>Categorical ratings can be obtained using choices:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ratingScale</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">RatingScale</span><span class="p">(</span>
+    <span class="n">win</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;agree&#39;</span><span class="p">,</span> <span class="s1">&#39;disagree&#39;</span><span class="p">],</span>
+    <span class="n">markerStart</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">singleClick</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>For other examples see Coder Demos -&gt; stimuli -&gt; ratingScale.py.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Authors:</th><td class="field-body"><ul class="first simple">
+<li>2010 Jeremy Gray: original code and on-going updates</li>
+<li>2012 Henrik Singmann: tickMarks, labels, ticksAboveLine</li>
+<li>2014 Jeremy Gray: multiple API changes (v1.80.00)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt>win :</dt>
+<dd><p class="first last">A <a class="reference internal" href="window.html#psychopy.visual.Window" title="psychopy.visual.Window"><code class="xref py py-class docutils literal notranslate"><span class="pre">Window</span></code></a> object (required).</p>
+</dd>
+<dt>choices :</dt>
+<dd><p class="first last">A list of items which the subject can choose among.
+<code class="docutils literal notranslate"><span class="pre">choices</span></code> takes precedence over <code class="docutils literal notranslate"><span class="pre">low</span></code>, <code class="docutils literal notranslate"><span class="pre">high</span></code>,
+<code class="docutils literal notranslate"><span class="pre">precision</span></code>, <code class="docutils literal notranslate"><span class="pre">scale</span></code>, <code class="docutils literal notranslate"><span class="pre">labels</span></code>, and <code class="docutils literal notranslate"><span class="pre">tickMarks</span></code>.</p>
+</dd>
+<dt>low :</dt>
+<dd><p class="first last">Lowest numeric rating (integer), default = 1.</p>
+</dd>
+<dt>high :</dt>
+<dd><p class="first last">Highest numeric rating (integer), default = 7.</p>
+</dd>
+<dt>precision :</dt>
+<dd><p class="first last">Portions of a tick to accept as input [1, 10, 60, 100];
+default = 1 (a whole tick).
+Pressing a key in <cite>leftKeys</cite> or <cite>rightKeys</cite> will move the
+marker by one portion of a tick. precision=60 is intended to
+support ratings of time-based quantities, with seconds being
+fractional minutes (or minutes being fractional hours).
+The display uses a colon (min:sec, or hours:min)
+to signal this to participants. The value returned by getRating()
+will be a proportion of a minute (e.g., 1:30 -&gt; 1.5, or 59 seconds
+-&gt; 59/60 = 0.98333). hours:min:sec is not supported.</p>
+</dd>
+<dt>scale :</dt>
+<dd><p class="first last">Optional reminder message about how to respond or rate an item,
+displayed above the line; default =
+‘&lt;low&gt;=not at all, &lt;high&gt;=extremely’.
+To suppress the scale, set <code class="docutils literal notranslate"><span class="pre">scale=None</span></code>.</p>
+</dd>
+<dt>labels :</dt>
+<dd><p class="first last">Text to be placed at specific tick marks to indicate their value.
+Can be just the ends (if given 2 labels), ends + middle
+(if given 3 labels),
+or all points (if given the same number of labels as points).</p>
+</dd>
+<dt>tickMarks :</dt>
+<dd><p class="first last">List of positions at which tick marks should be placed from low
+to high.
+The default is to space tick marks equally, one per integer value.</p>
+</dd>
+<dt>tickHeight :</dt>
+<dd><p class="first last">The vertical height of tick marks: 1.0 is the default height
+(above line), -1.0 is below the line, and 0.0 suppresses the
+display of tickmarks. <code class="docutils literal notranslate"><span class="pre">tickHeight</span></code> is purely cosmetic, and can
+be fractional, e.g., 1.2.</p>
+</dd>
+<dt>marker :</dt>
+<dd><p class="first last">The moveable visual indicator of the current selection. The
+predefined styles are ‘triangle’, ‘circle’, ‘glow’, ‘slider’,
+and ‘hover’. A slider moves smoothly when there are enough
+screen positions to move through, e.g., low=0, high=100.
+Hovering requires a set of choices, and allows clicking directly
+on individual choices; dwell-time is not recorded.
+Can also be set to a custom marker stimulus: any object with
+a .draw() method and .pos will work, e.g.,
+<code class="docutils literal notranslate"><span class="pre">visual.TextStim(win,</span> <span class="pre">text='[]',</span> <span class="pre">units='norm')</span></code>.</p>
+</dd>
+<dt>markerStart :</dt>
+<dd><p class="first last">The location or value to be pre-selected upon initial display,
+either numeric or one of the choices. Can be fractional,
+e.g., midway between two options.</p>
+</dd>
+<dt>markerColor :</dt>
+<dd><p class="first last">Color to use for a predefined marker style, e.g., ‘DarkRed’.</p>
+</dd>
+<dt>markerExpansion :</dt>
+<dd><p class="first last">Only affects the <cite>glow</cite> marker: How much to expand or
+contract when moving rightward; 0=none, negative shrinks.</p>
+</dd>
+<dt>singleClick :</dt>
+<dd><p class="first last">Enable a mouse click to both select and accept the rating,
+default = <code class="docutils literal notranslate"><span class="pre">False</span></code>.
+A legal key press will also count as a singleClick.
+The ‘accept’ box is visible, but clicking it has no effect.</p>
+</dd>
+<dt>pos <span class="classifier-delimiter">:</span> <span class="classifier">tuple (x, y)</span></dt>
+<dd><p class="first last">Position of the rating scale on the screen. The midpoint of
+the line will be positioned at <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y)</span></code>;
+default = <code class="docutils literal notranslate"><span class="pre">(0.0,</span> <span class="pre">-0.4)</span></code> in norm units</p>
+</dd>
+<dt>size :</dt>
+<dd><p class="first last">How much to expand or contract the overall rating scale display.
+Default size = 1.0. For larger than the default, set
+<code class="docutils literal notranslate"><span class="pre">size</span></code> &gt; 1; for smaller, set &lt; 1.</p>
+</dd>
+<dt>stretch:</dt>
+<dd><p class="first last">Like <code class="docutils literal notranslate"><span class="pre">size</span></code>, but only affects the horizontal direction.</p>
+</dd>
+<dt>textSize :</dt>
+<dd><p class="first last">The size of text elements, relative to the default size
+(i.e., a scaling factor, not points).</p>
+</dd>
+<dt>textColor :</dt>
+<dd><p class="first last">Color to use for labels and scale text; default = ‘LightGray’.</p>
+</dd>
+<dt>textFont :</dt>
+<dd><p class="first last">Name of the font to use; default = ‘Helvetica Bold’.</p>
+</dd>
+<dt>showValue :</dt>
+<dd><p class="first last">Show the subject their current selection default = <code class="docutils literal notranslate"><span class="pre">True</span></code>.
+Ignored if singleClick is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+</dd>
+<dt>showAccept :</dt>
+<dd><p class="first last">Show the button to click to accept the current value by using
+the mouse; default = <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+</dd>
+<dt>acceptPreText :</dt>
+<dd><p class="first last">The text to display before any value has been selected.</p>
+</dd>
+<dt>acceptText :</dt>
+<dd><p class="first last">The text to display in the ‘accept’ button after a value has
+been selected.</p>
+</dd>
+<dt>acceptSize :</dt>
+<dd><p class="first last">The width of the accept box relative to the default
+(e.g., 2 is twice as wide).</p>
+</dd>
+<dt>acceptKeys :</dt>
+<dd><p class="first last">A list of keys that are used to accept the current response;
+default = ‘return’.</p>
+</dd>
+<dt>leftKeys :</dt>
+<dd><p class="first last">A list of keys that each mean “move leftwards”;
+default = ‘left’.</p>
+</dd>
+<dt>rightKeys :</dt>
+<dd><p class="first last">A list of keys that each mean “move rightwards”;
+default = ‘right’.</p>
+</dd>
+<dt>respKeys :</dt>
+<dd><p class="first last">A list of keys to use for selecting choices, in the desired order.
+The first item will be the left-most choice, the second
+item will be the next choice, and so on.</p>
+</dd>
+<dt>skipKeys :</dt>
+<dd><p class="first last">List of keys the subject can use to skip a response,
+default = ‘tab’.
+To require a response to every item, set <code class="docutils literal notranslate"><span class="pre">skipKeys=None</span></code>.</p>
+</dd>
+<dt>lineColor :</dt>
+<dd><p class="first last">The RGB color to use for the scale line, default = ‘White’.</p>
+</dd>
+<dt>mouseOnly :</dt>
+<dd><p class="first last">Require the subject to use the mouse (any keyboard input is
+ignored), default = <code class="docutils literal notranslate"><span class="pre">False</span></code>. Can be used to avoid competing
+with other objects for keyboard input.</p>
+</dd>
+<dt>noMouse:</dt>
+<dd><p class="first last">Require the subject to use keys to respond; disable and
+hide the mouse.
+<cite>markerStart</cite> will default to the left end.</p>
+</dd>
+<dt>minTime :</dt>
+<dd><p class="first last">Seconds that must elapse before a response can be accepted,
+default = <cite>0.4</cite>.</p>
+</dd>
+<dt>maxTime :</dt>
+<dd><p class="first last">Seconds after which a response cannot be accepted.
+If <code class="docutils literal notranslate"><span class="pre">maxTime</span></code> &lt;= <code class="docutils literal notranslate"><span class="pre">minTime</span></code>, there’s no time limit.
+Default = <cite>0.0</cite> (no time limit).</p>
+</dd>
+<dt>disappear :</dt>
+<dd><p class="first last">Whether the rating scale should vanish after a value is accepted.
+Can be useful when showing multiple scales.</p>
+</dd>
+<dt>flipVert :</dt>
+<dd><p class="first last">Whether to mirror-reverse the rating scale in the vertical
+direction.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="rect.html" title="Rect"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="radialstim.html" title="RadialStim"
+             >previous</a> |</li>
+        <li><a href="../../index.html">PsychoPy</a> &raquo;</li>
+          <li><a href="../../documentation.html" >Documentation</a> &raquo;</li>
+          <li><a href="../api.html" >Reference Manual (API)</a> &raquo;</li>
+          <li><a href="../visual.html" ><code class="docutils literal notranslate"><span class="pre">psychopy.visual</span></code> - many visual stimuli</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2018, Jonathan Peirce.
+      Last updated on Jul 25, 2018.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.7.0.
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-4089651-2', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+
+    <script type="text/javascript" src="http://www.ohloh.net/p/17081/widgets/project_partner_badge.js"></script>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Creating online studies from Builder &mdash; PsychoPy v3.0</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0.0b2',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="top" title="PsychoPy v3.0" href="../index.html" /> 
+  </head>
+  <body>
+
+
+<div id="header"  style="background-color: white">
+<table width="100%" cellpadding="10">
+<tr><td style="text-align:left;vertical-align:middle">
+<a href='http://www.psychopy.org'><img src="../_static/psychopyDocBanner2.gif" alt="PsychoPy logo" /></a>
+</td><td style="text-align:right;vertical-align:middle">
+<a href='http://www.nottingham.ac.uk'><img src=../_static/UoN_Supported_RGBsm.png alt="University of Nottingham" /></a>
+</td></table>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../index.html">PsychoPy</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3><a href="../index.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference internal" href="#">Creating online studies from Builder</a><ul>
+<li><a class="reference internal" href="#check-if-your-study-is-fully-supported">Check if your study is fully supported</a></li>
+<li><a class="reference internal" href="#check-your-experiment-settings">Check your experiment settings</a></li>
+<li><a class="reference internal" href="#export-the-html-files">Export the HTML files</a></li>
+<li><a class="reference internal" href="#sync-your-files-with-pavlovia-org">Sync your files with Pavlovia.org</a></li>
+<li><a class="reference internal" href="#uploading-files-to-your-own-server">Uploading files to your own server</a></li>
+<li><a class="reference internal" href="#debug-your-online-experiments">Debug your online experiments</a></li>
+<li><a class="reference internal" href="#activate-on-pavlovia">Activate on Pavlovia</a></li>
+<li><a class="reference internal" href="#recruiting-participants">Recruiting participants</a></li>
+<li><a class="reference internal" href="#fetching-your-data">Fetching your data</a></li>
+<li><a class="reference internal" href="#sync-with-osf">Sync with OSF</a></li>
+</ul>
+</li>
+</ul>
+
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="../_sources/online/fromBuilder.rst.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+
+            <h3>Quick links</h3>
+            <ul>
+            <li><a href="http://psychopy.org/installation.html"><strong>Download</strong></a></li>
+            <li><a href="http://discourse.psychopy.org">Forum</a></li>
+            <li><a href="http://twitter.com/psychopy">Twitter</a></li>
+            </ul>
+
+            <!-- facebook like -->
+            <div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=122767831154831&amp;xfbml=1"></script>
+            <fb:like href="http://www.facebook.com/pages/PsychoPy/140222406067597" send="false" layout="button_count" width="300" show_faces="false" action="like" font=""></fb:like>
+
+            <!-- google +1 -->
+            <!-- Place this tag where you want the +1 button to render -->
+            <g:plusone count="false" href="http://www.psychopy.org"></g:plusone>
+            <!-- Place this tag after the last plusone tag -->
+            <script type="text/javascript">
+              window.___gcfg = {lang: 'en-GB'};
+              (function() {
+                var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                po.src = 'https://apis.google.com/js/plusone.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+              })();
+            </script>
+
+          <div id="searchbox" style="display: none">
+            <h3>Searches</h3>
+            <form action="http://www.google.com/cse" id="cse-search-box">
+                <input type="hidden" name="cx" value="partner-pub-0861691574026297:eyw5n7-ugep" />
+                <input type="hidden" name="ie" value="ISO-8859-1" />
+                <input type="text" name="q" size="20" />
+                <input type="submit" name="sa" value="Go" />
+            </form>
+              <p class="searchtip" style="font-size: 90%">
+              General
+              </p>
+            <script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=cse-search-box&amp;lang=en"></script>
+              <form class="search" action="../search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Docs only
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="creating-online-studies-from-builder">
+<span id="onlinefrombuilder"></span><h1>Creating online studies from Builder<a class="headerlink" href="#creating-online-studies-from-builder" title="Permalink to this headline">¶</a></h1>
+<p>PsychoPy can’t export all possible experiments to PsychoJS scripts yet. “Standard” studies using images, text and keyboards will work. Studies with other stimuli, or that use code components, probably won’t.</p>
+<p>These are the steps you need to follow to get up and running online:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#onlinechecksupported"><span class="std std-ref">Check if your study is fully supported</span></a></li>
+<li><a class="reference internal" href="#onlineexpsettings"><span class="std std-ref">Check your experiment settings</span></a></li>
+<li><a class="reference internal" href="#onlineexporthtml"><span class="std std-ref">Export the HTML files</span></a></li>
+<li><a class="reference internal" href="#onlineuploadserver"><span class="std std-ref">Uploading files to your own server</span></a></li>
+<li><a class="reference internal" href="#onlinedebugging"><span class="std std-ref">Debug your online experiments</span></a></li>
+<li><a class="reference internal" href="#onlineparticipants"><span class="std std-ref">Recruiting participants</span></a></li>
+<li><a class="reference internal" href="#fetchingdata"><span class="std std-ref">Fetching your data</span></a></li>
+</ul>
+</div></blockquote>
+<div class="section" id="check-if-your-study-is-fully-supported">
+<span id="onlinechecksupported"></span><h2>Check if your study is fully supported<a class="headerlink" href="#check-if-your-study-is-fully-supported" title="Permalink to this headline">¶</a></h2>
+<p>Keep checking the <a class="reference internal" href="status.html#onlinestatus"><span class="std std-ref">Status of online options</span></a> to see what is supported. You might want to sign up to the <a class="reference external" href="http://discourse.psychopy.org">PsychoPy forum</a> and turn on “watching” for the <a class="reference external" href="http://discourse.psychopy.org/c/online">Online Studies</a> category to get updates. That way you’ll know if we update/improve something and you’ll see if other people are having issues.</p>
+</div>
+<div class="section" id="check-your-experiment-settings">
+<span id="onlineexpsettings"></span><h2>Check your experiment settings<a class="headerlink" href="#check-your-experiment-settings" title="Permalink to this headline">¶</a></h2>
+<p>In your Experiment Settings there is an “Online” tab to control the settings.</p>
+<p>Path: When you upload your study to Pavlovia it will expect to find an ‘html’ folder in the root of the repository, so you want to set this up with that in mind. By default the output path will be for a folder called html next to the experiment file. So if that is in the root of the folder you sync online then you’ll be good to go! Usually you would have a folder structure something like this and <span class="xref std std-ref">sync that entire folder with pavlovia.org</span>:</p>
+<div class="figure">
+<img alt="Folder structure with the experiment (`blockedTrials.psyexp`), a `stims` folder in which the stimuli are stored, some conditions files and an `html` folder containing the code for the study to run online." src="online/image/foldersStimHTML.png" />
+</div>
+</div>
+<div class="section" id="export-the-html-files">
+<span id="onlineexporthtml"></span><h2>Export the HTML files<a class="headerlink" href="#export-the-html-files" title="Permalink to this headline">¶</a></h2>
+<p>Once you’ve checked your settings you can simply go to <cite>&gt;File&gt;Export HTML</cite> from the Builder view with your experiment open.</p>
+<p>That will generate all the necessary files (HTML and JS) that you need for your study</p>
+</div>
+<div class="section" id="sync-your-files-with-pavlovia-org">
+<span id="onlinesyncpavlovia"></span><h2>Sync your files with Pavlovia.org<a class="headerlink" href="#sync-your-files-with-pavlovia-org" title="Permalink to this headline">¶</a></h2>
+<p>Technically you could upload your html folder to any server but by far the easiest way to get your study running is to synchronise with Pavlovia.org. Pavlovia:</p>
+<blockquote>
+<div><ul class="simple">
+<li>allows really easy to synchronize from within PsychoPy</li>
+<li>is secure, using encrypted communication at all times</li>
+<li>is reliable, fast and automatically backed-up</li>
+<li>allows version control via <cite>Git</cite> (your experiment will be stored in a git repository locally and pushed/pulled with the server)</li>
+</ul>
+</div></blockquote>
+<p>All you need to do to get your files online is press the sync button. Depending on which steps you’ve already completed PsychoPy will then walk you though:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>register/login to the Pavlovia site</li>
+<li>create a project to sync with and choose the local folder as the root of that project</li>
+<li>sync the files</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>each time you add/change files locally PsychoPy will ask you to give a title and description for that set of changes (a <cite>git commit</cite> in the underlying version control)</li>
+<li>each time participants run online, if you’re using <cite>csv</cite> files for storage, then the new file(s) will also be added to the repository on Pavlovia</li>
+<li>when you press sync a two-way sync will occur</li>
+<li>this can be used to sync easily with any other machine or collaborator</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<p>Merges and conflicts:</p>
+<blockquote>
+<div><ul class="simple">
+<li>if changes are made concurrently these will typically be merged by git</li>
+<li>if two people change the <em>same file</em> then changes will still be combined if possible (e.g. you each make a change to a different parameter in the PsychoPy experiment)</li>
+<li>if 2 they strictly conflict (you both change the same parameter to a different value) then a merge conflict in git will result. Currently we aren’t providing a way to resolve these and you will need to find out enough about git to handle it locally</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="uploading-files-to-your-own-server">
+<span id="onlineuploadserver"></span><h2>Uploading files to your own server<a class="headerlink" href="#uploading-files-to-your-own-server" title="Permalink to this headline">¶</a></h2>
+<p>We really don’t recommend this and can only provide limited help if you go this route. If you do want to use your own server:</p>
+<blockquote>
+<div><ul class="simple">
+<li>You will need some way to save the data. PsychoJS can output to either:<ul>
+<li><cite>csv</cite> files in <cite>../data</cite> (i.e. a folder called <cite>data</cite> next to the html folder). You’ll need this to have permissions so that the web server can write to it</li>
+<li>a relational database</li>
+</ul>
+</li>
+<li>You should make sure your server is using https to encrypt the data you collect from your participants, in keeping with GDPR legislation</li>
+<li>You will need to install the server-side script</li>
+<li>You will need to adapt PsychoPy Builder’s output scripts (<cite>index.html</cite> and the <cite>&lt;experimentName&gt;.js</cite>) so that the references to <cite>lib/</cite> and <cite>lib/vendors</cite> are pointing to valid library locations (which you will either need to create, or point to original online sources)</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="debug-your-online-experiments">
+<span id="onlinedebugging"></span><h2>Debug your online experiments<a class="headerlink" href="#debug-your-online-experiments" title="Permalink to this headline">¶</a></h2>
+<p>This is going to be trickier for now than the PsychoPy/Python scripts. The starting point is that, as in Python, you need to be able to see the error messages (if there are any) being generated. To do this your browser you can hopefully show you the javascript “console” and you can see various logging messages and error messages there. If it doesn’t make any sense to you then you could try sending it to the PsychoPy forum in the <cite>Online</cite> category.</p>
+</div>
+<div class="section" id="activate-on-pavlovia">
+<span id="activaterecruitment"></span><h2>Activate on Pavlovia<a class="headerlink" href="#activate-on-pavlovia" title="Permalink to this headline">¶</a></h2>
+<p>This is needed</p>
+</div>
+<div class="section" id="recruiting-participants">
+<span id="onlineparticipants"></span><h2>Recruiting participants<a class="headerlink" href="#recruiting-participants" title="Permalink to this headline">¶</a></h2>
+<p>Once you’ve uploaded your folder with the correct permissions you can simply provide that as a URL/link to your prospective participants. When they go to this link they’ll see the info dialog box (with the same settings as the one you use in your standard PsychoPy study locally, but a little prettier). That dialog box may show a progress bar while the resources (e.g. image files) are downloading to the local computer. When they’ve finished downloading the ‘OK’ button will be available and the participant can carry on to your study.</p>
+<p>Note that the window won’t disappear when the study finishes the way it does locally, so remember to provide a final screen that says something like “Thank you. The experiment has now finished”</p>
+</div>
+<div class="section" id="fetching-your-data">
+<span id="fetchingdata"></span><h2>Fetching your data<a class="headerlink" href="#fetching-your-data" title="Permalink to this headline">¶</a></h2>
+<p>The data are saved in a data folder next to the html file. You should see csv files there that are similar to your PsychoPy standard output files. (There won’t be any psydat files though - that isn’t possible from JavaScript).</p>
+<p>You could just download the data folder or, if you’ve set it up to sync with an OSF project then you could simply sync your PsychoPy project with OSF (from the projects menu) and your data will be fetched to your local computer! :-)</p>
+</div>
+<div class="section" id="sync-with-osf">
+<h2>Sync with OSF<a class="headerlink" href="#sync-with-osf" title="Permalink to this headline">¶</a></h2>
+<p>This option is on the way. It does already work from the PsychoJS perspective. We need to make sure the Builder code is correct and write the docs!</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../index.html">PsychoPy</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2018, Jonathan Peirce.
+      Last updated on Jul 25, 2018.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.7.0.
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-4089651-2', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+
+    <script type="text/javascript" src="http://www.ohloh.net/p/17081/widgets/project_partner_badge.js"></script>
+    </div>
+  </body>
+</html>

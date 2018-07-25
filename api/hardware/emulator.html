@@ -1,0 +1,564 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Launch an fMRI experiment: Test or Scan &mdash; PsychoPy v3.0</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '3.0.0b2',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="PsychoPy v3.0" href="../../index.html" />
+    <link rel="up" title="psychopy.hardware - hardware interfaces" href="../hardware.html" />
+    <link rel="next" title="fORP response box" href="forp.html" />
+    <link rel="prev" title="egi (pynetstation)" href="egi.html" /> 
+  </head>
+  <body>
+
+
+<div id="header"  style="background-color: white">
+<table width="100%" cellpadding="10">
+<tr><td style="text-align:left;vertical-align:middle">
+<a href='http://www.psychopy.org'><img src="../../_static/psychopyDocBanner2.gif" alt="PsychoPy logo" /></a>
+</td><td style="text-align:right;vertical-align:middle">
+<a href='http://www.nottingham.ac.uk'><img src=../../_static/UoN_Supported_RGBsm.png alt="University of Nottingham" /></a>
+</td></table>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="forp.html" title="fORP response box"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="egi.html" title="egi (pynetstation)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">PsychoPy</a> &raquo;</li>
+          <li><a href="../../documentation.html" >Documentation</a> &raquo;</li>
+          <li><a href="../api.html" >Reference Manual (API)</a> &raquo;</li>
+          <li><a href="../hardware.html" accesskey="U"><code class="docutils literal notranslate"><span class="pre">psychopy.hardware</span></code> - hardware interfaces</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="egi.html"
+                                  title="previous chapter">egi (pynetstation)</a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="forp.html"
+                                  title="next chapter">fORP response box</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="../../_sources/api/hardware/emulator.rst.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+
+            <h3>Quick links</h3>
+            <ul>
+            <li><a href="http://psychopy.org/installation.html"><strong>Download</strong></a></li>
+            <li><a href="http://discourse.psychopy.org">Forum</a></li>
+            <li><a href="http://twitter.com/psychopy">Twitter</a></li>
+            </ul>
+
+            <!-- facebook like -->
+            <div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=122767831154831&amp;xfbml=1"></script>
+            <fb:like href="http://www.facebook.com/pages/PsychoPy/140222406067597" send="false" layout="button_count" width="300" show_faces="false" action="like" font=""></fb:like>
+
+            <!-- google +1 -->
+            <!-- Place this tag where you want the +1 button to render -->
+            <g:plusone count="false" href="http://www.psychopy.org"></g:plusone>
+            <!-- Place this tag after the last plusone tag -->
+            <script type="text/javascript">
+              window.___gcfg = {lang: 'en-GB'};
+              (function() {
+                var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                po.src = 'https://apis.google.com/js/plusone.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+              })();
+            </script>
+
+          <div id="searchbox" style="display: none">
+            <h3>Searches</h3>
+            <form action="http://www.google.com/cse" id="cse-search-box">
+                <input type="hidden" name="cx" value="partner-pub-0861691574026297:eyw5n7-ugep" />
+                <input type="hidden" name="ie" value="ISO-8859-1" />
+                <input type="text" name="q" size="20" />
+                <input type="submit" name="sa" value="Go" />
+            </form>
+              <p class="searchtip" style="font-size: 90%">
+              General
+              </p>
+            <script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=cse-search-box&amp;lang=en"></script>
+              <form class="search" action="../../search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Docs only
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-psychopy.hardware.emulator">
+<span id="launch-an-fmri-experiment-test-or-scan"></span><h1>Launch an fMRI experiment: Test or Scan<a class="headerlink" href="#module-psychopy.hardware.emulator" title="Permalink to this headline">¶</a></h1>
+<p>Idea: Run or debug an experiment script using exactly the same code,
+i.e., for both testing and online data acquisition. To debug timing,
+you can emulate sync pulses and user responses.
+Limitations: pyglet only; keyboard events only.</p>
+<dl class="class">
+<dt id="psychopy.hardware.emulator.ResponseEmulator">
+<em class="property">class </em><code class="descclassname">psychopy.hardware.emulator.</code><code class="descname">ResponseEmulator</code><span class="sig-paren">(</span><em>simResponses=None</em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.emulator.ResponseEmulator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class to allow simulation of a user’s keyboard responses
+during  a scan.</p>
+<p>Given a list of response tuples (time, key), the thread will
+simulate a user pressing a key at a specific time (relative to
+the start of the run).</p>
+<p>Author: Jeremy Gray; Idea: Mike MacAskill</p>
+<dl class="attribute">
+<dt id="psychopy.hardware.emulator.ResponseEmulator.daemon">
+<code class="descname">daemon</code><a class="headerlink" href="#psychopy.hardware.emulator.ResponseEmulator.daemon" title="Permalink to this definition">¶</a></dt>
+<dd><p>A boolean value indicating whether this thread is a daemon thread (True) or not (False).</p>
+<p>This must be set before start() is called, otherwise RuntimeError is
+raised. Its initial value is inherited from the creating thread; the
+main thread is not a daemon thread and therefore all threads created in
+the main thread default to daemon = False.</p>
+<p>The entire Python program exits when no alive non-daemon threads are
+left.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="psychopy.hardware.emulator.ResponseEmulator.ident">
+<code class="descname">ident</code><a class="headerlink" href="#psychopy.hardware.emulator.ResponseEmulator.ident" title="Permalink to this definition">¶</a></dt>
+<dd><p>Thread identifier of this thread or None if it has not been started.</p>
+<p>This is a nonzero integer. See the thread.get_ident() function. Thread
+identifiers may be recycled when a thread exits and another thread is
+created. The identifier is available even after the thread has exited.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.hardware.emulator.ResponseEmulator.isAlive">
+<code class="descname">isAlive</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.emulator.ResponseEmulator.isAlive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return whether the thread is alive.</p>
+<p>This method returns True just before the run() method starts until just
+after the run() method terminates. The module function enumerate()
+returns a list of all alive threads.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.hardware.emulator.ResponseEmulator.is_alive">
+<code class="descname">is_alive</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.emulator.ResponseEmulator.is_alive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return whether the thread is alive.</p>
+<p>This method returns True just before the run() method starts until just
+after the run() method terminates. The module function enumerate()
+returns a list of all alive threads.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.hardware.emulator.ResponseEmulator.join">
+<code class="descname">join</code><span class="sig-paren">(</span><em>timeout=None</em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.emulator.ResponseEmulator.join" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wait until the thread terminates.</p>
+<p>This blocks the calling thread until the thread whose join() method is
+called terminates – either normally or through an unhandled exception
+or until the optional timeout occurs.</p>
+<p>When the timeout argument is present and not None, it should be a
+floating point number specifying a timeout for the operation in seconds
+(or fractions thereof). As join() always returns None, you must call
+isAlive() after join() to decide whether a timeout happened – if the
+thread is still alive, the join() call timed out.</p>
+<p>When the timeout argument is not present or None, the operation will
+block until the thread terminates.</p>
+<p>A thread can be join()ed many times.</p>
+<p>join() raises a RuntimeError if an attempt is made to join the current
+thread as that would cause a deadlock. It is also an error to join() a
+thread before it has been started and attempts to do so raises the same
+exception.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="psychopy.hardware.emulator.ResponseEmulator.name">
+<code class="descname">name</code><a class="headerlink" href="#psychopy.hardware.emulator.ResponseEmulator.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>A string used for identification purposes only.</p>
+<p>It has no semantics. Multiple threads may be given the same name. The
+initial name is set by the constructor.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.hardware.emulator.ResponseEmulator.run">
+<code class="descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.emulator.ResponseEmulator.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method representing the thread’s activity.</p>
+<p>You may override this method in a subclass. The standard run() method
+invokes the callable object passed to the object’s constructor as the
+target argument, if any, with sequential and keyword arguments taken
+from the args and kwargs arguments, respectively.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.hardware.emulator.ResponseEmulator.start">
+<code class="descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.emulator.ResponseEmulator.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start the thread’s activity.</p>
+<p>It must be called at most once per thread object. It arranges for the
+object’s run() method to be invoked in a separate thread of control.</p>
+<p>This method will raise a RuntimeError if called more than once on the
+same thread object.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="psychopy.hardware.emulator.SyncGenerator">
+<em class="property">class </em><code class="descclassname">psychopy.hardware.emulator.</code><code class="descname">SyncGenerator</code><span class="sig-paren">(</span><em>TR=1.0</em>, <em>TA=1.0</em>, <em>volumes=10</em>, <em>sync='5'</em>, <em>skip=0</em>, <em>sound=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.emulator.SyncGenerator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class for a character-emitting metronome thread
+(emulate MR sync pulse).</p>
+<p>Aim: Allow testing of temporal robustness of fMRI scripts by emulating
+a hardware sync pulse. Adds an arbitrary ‘sync’ character to the key
+buffer, with sub-millisecond precision (less precise if CPU is maxed).
+Recommend: TR=1.000 or higher and less than 100% CPU. Shorter TR
+–&gt; higher CPU load.</p>
+<dl class="docutils">
+<dt>Parameters:</dt>
+<dd><p class="first">TR:      seconds between volume acquisitions
+TA:      seconds to acquire one volume
+volumes: number of 3D volumes to obtain in a given scanning run
+sync:    character used as flag for sync timing, default=‘5’
+skip:    how many frames to silently omit initially during T1</p>
+<blockquote>
+<div>stabilization, no sync pulse. Not needed to test script
+timing, but will give more accurate feel to start of run.
+aka “discdacqs”.</div></blockquote>
+<p class="last">sound:   simulate scanner noise</p>
+</dd>
+</dl>
+<dl class="attribute">
+<dt id="psychopy.hardware.emulator.SyncGenerator.daemon">
+<code class="descname">daemon</code><a class="headerlink" href="#psychopy.hardware.emulator.SyncGenerator.daemon" title="Permalink to this definition">¶</a></dt>
+<dd><p>A boolean value indicating whether this thread is a daemon thread (True) or not (False).</p>
+<p>This must be set before start() is called, otherwise RuntimeError is
+raised. Its initial value is inherited from the creating thread; the
+main thread is not a daemon thread and therefore all threads created in
+the main thread default to daemon = False.</p>
+<p>The entire Python program exits when no alive non-daemon threads are
+left.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="psychopy.hardware.emulator.SyncGenerator.ident">
+<code class="descname">ident</code><a class="headerlink" href="#psychopy.hardware.emulator.SyncGenerator.ident" title="Permalink to this definition">¶</a></dt>
+<dd><p>Thread identifier of this thread or None if it has not been started.</p>
+<p>This is a nonzero integer. See the thread.get_ident() function. Thread
+identifiers may be recycled when a thread exits and another thread is
+created. The identifier is available even after the thread has exited.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.hardware.emulator.SyncGenerator.isAlive">
+<code class="descname">isAlive</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.emulator.SyncGenerator.isAlive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return whether the thread is alive.</p>
+<p>This method returns True just before the run() method starts until just
+after the run() method terminates. The module function enumerate()
+returns a list of all alive threads.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.hardware.emulator.SyncGenerator.is_alive">
+<code class="descname">is_alive</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.emulator.SyncGenerator.is_alive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return whether the thread is alive.</p>
+<p>This method returns True just before the run() method starts until just
+after the run() method terminates. The module function enumerate()
+returns a list of all alive threads.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.hardware.emulator.SyncGenerator.join">
+<code class="descname">join</code><span class="sig-paren">(</span><em>timeout=None</em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.emulator.SyncGenerator.join" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wait until the thread terminates.</p>
+<p>This blocks the calling thread until the thread whose join() method is
+called terminates – either normally or through an unhandled exception
+or until the optional timeout occurs.</p>
+<p>When the timeout argument is present and not None, it should be a
+floating point number specifying a timeout for the operation in seconds
+(or fractions thereof). As join() always returns None, you must call
+isAlive() after join() to decide whether a timeout happened – if the
+thread is still alive, the join() call timed out.</p>
+<p>When the timeout argument is not present or None, the operation will
+block until the thread terminates.</p>
+<p>A thread can be join()ed many times.</p>
+<p>join() raises a RuntimeError if an attempt is made to join the current
+thread as that would cause a deadlock. It is also an error to join() a
+thread before it has been started and attempts to do so raises the same
+exception.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="psychopy.hardware.emulator.SyncGenerator.name">
+<code class="descname">name</code><a class="headerlink" href="#psychopy.hardware.emulator.SyncGenerator.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>A string used for identification purposes only.</p>
+<p>It has no semantics. Multiple threads may be given the same name. The
+initial name is set by the constructor.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.hardware.emulator.SyncGenerator.run">
+<code class="descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.emulator.SyncGenerator.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method representing the thread’s activity.</p>
+<p>You may override this method in a subclass. The standard run() method
+invokes the callable object passed to the object’s constructor as the
+target argument, if any, with sequential and keyword arguments taken
+from the args and kwargs arguments, respectively.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.hardware.emulator.SyncGenerator.start">
+<code class="descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.emulator.SyncGenerator.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start the thread’s activity.</p>
+<p>It must be called at most once per thread object. It arranges for the
+object’s run() method to be invoked in a separate thread of control.</p>
+<p>This method will raise a RuntimeError if called more than once on the
+same thread object.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="psychopy.hardware.emulator.launchScan">
+<code class="descclassname">psychopy.hardware.emulator.</code><code class="descname">launchScan</code><span class="sig-paren">(</span><em>win</em>, <em>settings</em>, <em>globalClock=None</em>, <em>simResponses=None</em>, <em>mode=None</em>, <em>esc_key='escape'</em>, <em>instr='select Scan or Test</em>, <em>press enter'</em>, <em>wait_msg='waiting for scanner...'</em>, <em>wait_timeout=300</em>, <em>log=True</em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.emulator.launchScan" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accepts up to four fMRI scan parameters (TR, volumes, sync-key, skip),
+and launches an experiment in one of two modes: Scan, or Test.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Usage:</th><td class="field-body"><p class="first">See Coder Demo -&gt; experiment control -&gt; fMRI_launchScan.py.</p>
+<p class="last">In brief: 1) from psychopy.hardware.emulator import launchScan;
+2) Define your args; and 3) add ‘vol = launchScan(args)’
+at the top of your experiment script.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>launchScan() waits for the first sync pulse and then returns, allowing
+your experiment script to proceed. The key feature is that, in test mode,
+it first starts an autonomous thread that emulates sync pulses (i.e.,
+emulated by your CPU rather than generated by an MRI machine). The
+thread places a character in the key buffer, exactly like a keyboard
+event does. launchScan will wait for the first such sync pulse (i.e.,
+character in the key buffer). launchScan returns the number of sync pulses
+detected so far (i.e., 1), so that a script can account for them
+explicitly.</p>
+<p>If a globalClock is given (highly recommended), it is reset to 0.0 when
+the first sync pulse is detected. If a mode was not specified when calling
+launchScan, the operator is prompted to select Scan or Test.</p>
+<p>If <strong>scan mode</strong> is selected, the script will wait until the first scan
+pulse is detected. Typically this would be coming from the scanner, but
+note that it could also be a person manually pressing that key.</p>
+<p>If <strong>test mode</strong> is selected, launchScan() starts a separate thread to
+emit sync pulses / key presses. Note that this thread is effectively
+nothing more than a key-pressing metronome, emitting a key at the start
+of every TR, doing so with high temporal precision.</p>
+<p>If your MR hardware interface does not deliver a key character as a sync
+flag, you can still use launchScan() to test script timing. You have to
+code your experiment to trigger on either a sync character (to test
+timing) or your usual sync flag (for actual scanning).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first">win: a <a class="reference internal" href="../visual/window.html#psychopy.visual.Window" title="psychopy.visual.Window"><code class="xref py py-class docutils literal notranslate"><span class="pre">Window</span></code></a> object (required)</p>
+<dl class="last docutils">
+<dt>settings <span class="classifier-delimiter">:</span> <span class="classifier">a dict containing up to 5 parameters</span></dt>
+<dd><p class="first">(2 required: TR, volumes)</p>
+<dl class="last docutils">
+<dt>TR :</dt>
+<dd><p class="first last">seconds per whole-brain volume (minimum value = 0.1s)</p>
+</dd>
+<dt>volumes :</dt>
+<dd><p class="first last">number of whole-brain (3D) volumes to obtain in a given
+scanning run.</p>
+</dd>
+<dt>sync :</dt>
+<dd><p class="first last">(optional) key for sync timing, default = ‘5’.</p>
+</dd>
+<dt>skip :</dt>
+<dd><p class="first last">(optional) how many volumes to silently omit initially
+(during T1 stabilization, no sync pulse). default = 0.</p>
+</dd>
+<dt>sound :</dt>
+<dd><p class="first last">(optional) whether to play a sound when simulating scanner
+sync pulses</p>
+</dd>
+</dl>
+</dd>
+<dt>globalClock :</dt>
+<dd><p class="first last">optional but highly recommended <a class="reference internal" href="../core.html#psychopy.core.Clock" title="psychopy.core.Clock"><code class="xref py py-class docutils literal notranslate"><span class="pre">Clock</span></code></a> to
+be used during the scan; if one is given, it is reset to 0.000
+when the first sync pulse is received.</p>
+</dd>
+<dt>simResponses :</dt>
+<dd><p class="first last">optional list of tuples [(time, key), (time, key), …]. time
+values are seconds after the first scan pulse is received.</p>
+</dd>
+<dt>esc_key :</dt>
+<dd><p class="first last">key to be used for user-interrupt during launch.
+default = ‘escape’</p>
+</dd>
+<dt>mode :</dt>
+<dd><p class="first last">if mode is ‘Test’ or ‘Scan’, launchScan() will start in that mode.</p>
+</dd>
+<dt>instr :</dt>
+<dd><p class="first last">instructions to be displayed to the scan operator during mode
+selection.</p>
+</dd>
+<dt>wait_msg :</dt>
+<dd><p class="first last">message to be displayed to the subject while waiting for the
+scan to start (i.e., after operator indicates start but before
+the first scan pulse is received).</p>
+</dd>
+<dt>wait_timeout :</dt>
+<dd><p class="first last">time in seconds that launchScan will wait before assuming
+something went wrong and exiting. Defaults to 300sec (5 min).
+Raises a RuntimeError if no sync pulse is received in the
+allowable time.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt>
+<em class="property">class </em><code class="descclassname">psychopy.hardware.emulator.</code><code class="descname">ResponseEmulator</code><span class="sig-paren">(</span><em>simResponses=None</em><span class="sig-paren">)</span></dt>
+<dd><p>Class to allow simulation of a user’s keyboard responses
+during  a scan.</p>
+<p>Given a list of response tuples (time, key), the thread will
+simulate a user pressing a key at a specific time (relative to
+the start of the run).</p>
+<p>Author: Jeremy Gray; Idea: Mike MacAskill</p>
+<dl class="method">
+<dt>
+<code class="descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Method representing the thread’s activity.</p>
+<p>You may override this method in a subclass. The standard run() method
+invokes the callable object passed to the object’s constructor as the
+target argument, if any, with sequential and keyword arguments taken
+from the args and kwargs arguments, respectively.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt>
+<em class="property">class </em><code class="descclassname">psychopy.hardware.emulator.</code><code class="descname">SyncGenerator</code><span class="sig-paren">(</span><em>TR=1.0</em>, <em>TA=1.0</em>, <em>volumes=10</em>, <em>sync='5'</em>, <em>skip=0</em>, <em>sound=False</em>, <em>**kwargs</em><span class="sig-paren">)</span></dt>
+<dd><p>Class for a character-emitting metronome thread
+(emulate MR sync pulse).</p>
+<p>Aim: Allow testing of temporal robustness of fMRI scripts by emulating
+a hardware sync pulse. Adds an arbitrary ‘sync’ character to the key
+buffer, with sub-millisecond precision (less precise if CPU is maxed).
+Recommend: TR=1.000 or higher and less than 100% CPU. Shorter TR
+–&gt; higher CPU load.</p>
+<dl class="docutils">
+<dt>Parameters:</dt>
+<dd><p class="first">TR:      seconds between volume acquisitions
+TA:      seconds to acquire one volume
+volumes: number of 3D volumes to obtain in a given scanning run
+sync:    character used as flag for sync timing, default=‘5’
+skip:    how many frames to silently omit initially during T1</p>
+<blockquote>
+<div>stabilization, no sync pulse. Not needed to test script
+timing, but will give more accurate feel to start of run.
+aka “discdacqs”.</div></blockquote>
+<p class="last">sound:   simulate scanner noise</p>
+</dd>
+</dl>
+<dl class="method">
+<dt>
+<code class="descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Method representing the thread’s activity.</p>
+<p>You may override this method in a subclass. The standard run() method
+invokes the callable object passed to the object’s constructor as the
+target argument, if any, with sequential and keyword arguments taken
+from the args and kwargs arguments, respectively.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="forp.html" title="fORP response box"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="egi.html" title="egi (pynetstation)"
+             >previous</a> |</li>
+        <li><a href="../../index.html">PsychoPy</a> &raquo;</li>
+          <li><a href="../../documentation.html" >Documentation</a> &raquo;</li>
+          <li><a href="../api.html" >Reference Manual (API)</a> &raquo;</li>
+          <li><a href="../hardware.html" ><code class="docutils literal notranslate"><span class="pre">psychopy.hardware</span></code> - hardware interfaces</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2018, Jonathan Peirce.
+      Last updated on Jul 25, 2018.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.7.0.
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-4089651-2', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+
+    <script type="text/javascript" src="http://www.ohloh.net/p/17081/widgets/project_partner_badge.js"></script>
+    </div>
+  </body>
+</html>

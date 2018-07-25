@@ -1,0 +1,636 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>BitsPlusPlus &mdash; PsychoPy v3.0</title>
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '3.0.0b2',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="top" title="PsychoPy v3.0" href="../../../index.html" />
+    <link rel="up" title="Cambridge Research Systems Ltd." href="../crs.html" />
+    <link rel="next" title="BitsSharp" href="BitsSharp.html" />
+    <link rel="prev" title="Cambridge Research Systems Ltd." href="../crs.html" /> 
+  </head>
+  <body>
+
+
+<div id="header"  style="background-color: white">
+<table width="100%" cellpadding="10">
+<tr><td style="text-align:left;vertical-align:middle">
+<a href='http://www.psychopy.org'><img src="../../../_static/psychopyDocBanner2.gif" alt="PsychoPy logo" /></a>
+</td><td style="text-align:right;vertical-align:middle">
+<a href='http://www.nottingham.ac.uk'><img src=../../../_static/UoN_Supported_RGBsm.png alt="University of Nottingham" /></a>
+</td></table>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="BitsSharp.html" title="BitsSharp"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../crs.html" title="Cambridge Research Systems Ltd."
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">PsychoPy</a> &raquo;</li>
+          <li><a href="../../../documentation.html" >Documentation</a> &raquo;</li>
+          <li><a href="../../api.html" >Reference Manual (API)</a> &raquo;</li>
+          <li><a href="../../hardware.html" ><code class="docutils literal notranslate"><span class="pre">psychopy.hardware</span></code> - hardware interfaces</a> &raquo;</li>
+          <li><a href="../crs.html" accesskey="U">Cambridge Research Systems Ltd.</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3><a href="../../../index.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">BitsPlusPlus</span></code></a><ul>
+<li><a class="reference internal" href="#attributes">Attributes</a></li>
+<li><a class="reference internal" href="#details">Details</a></li>
+<li><a class="reference internal" href="#finding-the-identity-lut">Finding the identity LUT</a></li>
+</ul>
+</li>
+</ul>
+
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="../crs.html"
+                                  title="previous chapter">Cambridge Research Systems Ltd.</a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="BitsSharp.html"
+                                  title="next chapter"><code class="docutils literal notranslate"><span class="pre">BitsSharp</span></code></a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="../../../_sources/api/hardware/crs/BitsPlusPlus.rst.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+
+            <h3>Quick links</h3>
+            <ul>
+            <li><a href="http://psychopy.org/installation.html"><strong>Download</strong></a></li>
+            <li><a href="http://discourse.psychopy.org">Forum</a></li>
+            <li><a href="http://twitter.com/psychopy">Twitter</a></li>
+            </ul>
+
+            <!-- facebook like -->
+            <div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=122767831154831&amp;xfbml=1"></script>
+            <fb:like href="http://www.facebook.com/pages/PsychoPy/140222406067597" send="false" layout="button_count" width="300" show_faces="false" action="like" font=""></fb:like>
+
+            <!-- google +1 -->
+            <!-- Place this tag where you want the +1 button to render -->
+            <g:plusone count="false" href="http://www.psychopy.org"></g:plusone>
+            <!-- Place this tag after the last plusone tag -->
+            <script type="text/javascript">
+              window.___gcfg = {lang: 'en-GB'};
+              (function() {
+                var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                po.src = 'https://apis.google.com/js/plusone.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+              })();
+            </script>
+
+          <div id="searchbox" style="display: none">
+            <h3>Searches</h3>
+            <form action="http://www.google.com/cse" id="cse-search-box">
+                <input type="hidden" name="cx" value="partner-pub-0861691574026297:eyw5n7-ugep" />
+                <input type="hidden" name="ie" value="ISO-8859-1" />
+                <input type="text" name="q" size="20" />
+                <input type="submit" name="sa" value="Go" />
+            </form>
+              <p class="searchtip" style="font-size: 90%">
+              General
+              </p>
+            <script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=cse-search-box&amp;lang=en"></script>
+              <form class="search" action="../../../search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Docs only
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="bitsplusplus">
+<span id="id1"></span><h1><code class="xref py py-class docutils literal notranslate"><span class="pre">BitsPlusPlus</span></code><a class="headerlink" href="#bitsplusplus" title="Permalink to this headline">¶</a></h1>
+<p>Control a CRS Bits# device. See typical usage in the class summary (and in the
+menu demos&gt;hardware&gt;BitsBox of PsychoPy’s Coder view).</p>
+<p><strong>Important:</strong> See note on <a class="reference internal" href="#bitsplusplusidentitylut">BitsPlusPlusIdentityLUT</a></p>
+<div class="section" id="attributes">
+<h2>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#psychopy.hardware.crs.bits.BitsPlusPlus" title="psychopy.hardware.crs.bits.BitsPlusPlus"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BitsPlusPlus</span></code></a>(win[,&nbsp;contrast,&nbsp;gamma,&nbsp;…])</td>
+<td>The main class to control a Bits++ box.</td>
+</tr>
+<tr class="row-even"><td><code class="xref py py-obj docutils literal notranslate"><span class="pre">BitsPlusPlus.mode</span></code></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#psychopy.hardware.crs.bits.BitsPlusPlus.setContrast" title="psychopy.hardware.crs.bits.BitsPlusPlus.setContrast"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BitsPlusPlus.setContrast</span></code></a>(contrast[,&nbsp;…])</td>
+<td>Set the contrast of the LUT for ‘bits++’ mode only :Parameters:     contrast : float in the range 0:1         The contrast for the range being set     LUTrange : float or array         If a float is given then this is the fraction of the LUT         to be used.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#psychopy.hardware.crs.bits.BitsPlusPlus.setGamma" title="psychopy.hardware.crs.bits.BitsPlusPlus.setGamma"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BitsPlusPlus.setGamma</span></code></a>(newGamma)</td>
+<td>Set the LUT to have the requested gamma value Currently also resets the LUT to be a linear contrast ramp spanning its full range.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#psychopy.hardware.crs.bits.BitsPlusPlus.setLUT" title="psychopy.hardware.crs.bits.BitsPlusPlus.setLUT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BitsPlusPlus.setLUT</span></code></a>([newLUT,&nbsp;gammaCorrect,&nbsp;…])</td>
+<td>Sets the LUT to a specific range of values in ‘bits++’ mode only Note that, if you leave gammaCorrect=True then any LUT values you supply will automatically be gamma corrected.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="details">
+<h2>Details<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="psychopy.hardware.crs.bits.BitsPlusPlus">
+<em class="property">class </em><code class="descclassname">psychopy.hardware.crs.bits.</code><code class="descname">BitsPlusPlus</code><span class="sig-paren">(</span><em>win</em>, <em>contrast=1.0</em>, <em>gamma=None</em>, <em>nEntries=256</em>, <em>mode='bits++'</em>, <em>rampType='configFile'</em>, <em>frameRate=None</em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.crs.bits.BitsPlusPlus" title="Permalink to this definition">¶</a></dt>
+<dd><p>The main class to control a Bits++ box.
+This is usually a class added within the window object and is
+typically accessed from there. e.g.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">psychopy</span> <span class="k">import</span> <span class="n">visual</span>
+<span class="kn">from</span> <span class="nn">psychopy.hardware</span> <span class="k">import</span> <span class="n">crs</span>
+<span class="n">win</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">Window</span><span class="p">([</span><span class="mi">800</span><span class="p">,</span><span class="mi">600</span><span class="p">])</span>
+<span class="n">bits</span> <span class="o">=</span> <span class="n">crs</span><span class="o">.</span><span class="n">BitsPlusPlus</span><span class="p">(</span><span class="n">win</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;bits++&#39;</span><span class="p">)</span>
+<span class="c1"># use bits++ to reduce the whole screen contrast by 50%:</span>
+<span class="n">bits</span><span class="o">.</span><span class="n">setContrast</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt>contrast :</dt>
+<dd><p class="first last">The contrast to be applied to the LUT.
+See <a class="reference internal" href="#psychopy.hardware.crs.bits.BitsPlusPlus.setLUT" title="psychopy.hardware.crs.bits.BitsPlusPlus.setLUT"><code class="xref py py-func docutils literal notranslate"><span class="pre">BitsPlusPlus.setLUT()</span></code></a> and
+<a class="reference internal" href="#psychopy.hardware.crs.bits.BitsPlusPlus.setContrast" title="psychopy.hardware.crs.bits.BitsPlusPlus.setContrast"><code class="xref py py-func docutils literal notranslate"><span class="pre">BitsPlusPlus.setContrast()</span></code></a> for flexibility on setting
+just a section of the LUT to a different value</p>
+</dd>
+<dt>gamma :</dt>
+<dd><p class="first last">The value used to correct the gamma in the LUT</p>
+</dd>
+<dt>nEntries <span class="classifier-delimiter">:</span> <span class="classifier">256</span></dt>
+<dd><p class="first last">[DEPRECATED feature]</p>
+</dd>
+<dt>mode <span class="classifier-delimiter">:</span> <span class="classifier">‘bits++’ (or ‘mono++’ or ‘color++’)</span></dt>
+<dd><p class="first last">Note that, unlike the Bits#, this only affects the way the
+window is rendered, it does not switch the state of the Bits++
+device itself (because unlike the Bits# have no way to
+communicate with it).
+The mono++ and color++ are only supported in PsychoPy 1.82.00
+onwards. Even then they suffer from not having gamma
+correction applied on Bits++ (unlike Bits# which can apply
+a gamma table in the device hardware).</p>
+</dd>
+<dt>rampType <span class="classifier-delimiter">:</span> <span class="classifier">‘configFile’, None or an integer</span></dt>
+<dd><p class="first last">if ‘configFile’ then we’ll look for a valid config in the
+userPrefs folder if an integer then this will be used during
+win.setGamma(rampType=rampType):</p>
+</dd>
+</dl>
+<p class="last">frameRate : an estimate the frameRate of the monitor. If None frame rate
+will be calculated.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="psychopy.hardware.crs.bits.BitsPlusPlus.getPackets">
+<code class="descname">getPackets</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.crs.bits.BitsPlusPlus.getPackets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the number of packets available for trigger pulses.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.hardware.crs.bits.BitsPlusPlus.primeClock">
+<code class="descname">primeClock</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.crs.bits.BitsPlusPlus.primeClock" title="Permalink to this definition">¶</a></dt>
+<dd><p>Primes the clock to reset at the next screen 
+flip - note only 1 clock reset signal will be issued
+but if the frame(s) after the reset frame is 
+dropped the reset will be re-issued thus keeping timing good.</p>
+<p>Resets continute to be issued on each video frame until
+the next win.flip so you need to have regular win.flips for
+this fucntion to work properly.</p>
+<dl class="docutils">
+<dt>Example</dt>
+<dd><p class="first">bits.primeClock()
+drawImage
+while not response</p>
+<blockquote class="last">
+<div>#do some processing
+bits.win.flip()</div></blockquote>
+</dd>
+</dl>
+<p>Will get a clock reset signal ready but wont issue it until the first win.flip in the loop.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.hardware.crs.bits.BitsPlusPlus.reset">
+<code class="descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.crs.bits.BitsPlusPlus.reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deprecated: This was used on the old Bits++
+to power-cycle the box.
+It required the compiled dll, which only worked 
+on windows and doesn’t work with Bits# or Display++.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.hardware.crs.bits.BitsPlusPlus.resetClock">
+<code class="descname">resetClock</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.crs.bits.BitsPlusPlus.resetClock" title="Permalink to this definition">¶</a></dt>
+<dd><p>Issues a clock reset code using 1 screen flip
+if the next frame(s) is dropped the reset will be 
+re-issued thus keeping timing good.</p>
+<p>Resets continute to be issued on each video frame until
+the next win.flip so you need to have regular win.flips for
+this fucntion to work properly.</p>
+<dl class="docutils">
+<dt>Example:</dt>
+<dd>bits.resetClock()
+drawImage()
+bits.win.flip()</dd>
+</dl>
+<p>Will issue clock resets  while the image is being drawn then
+display the inmage and allow the clock to continue formt he same frame.</p>
+<dl class="docutils">
+<dt>Example:</dt>
+<dd>bits.resetClock()
+bits.RTBoxWait()
+bits.win.flip()</dd>
+</dl>
+<p>Will issue clock resets until a button is presses.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.hardware.crs.bits.BitsPlusPlus.sendTrigger">
+<code class="descname">sendTrigger</code><span class="sig-paren">(</span><em>triggers=0</em>, <em>onTime=0</em>, <em>duration=0</em>, <em>mask=65535</em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.crs.bits.BitsPlusPlus.sendTrigger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends a single trigger using up 1 win.flip.
+The trigger will be sent on the following frame.</p>
+<p>The triggers will continue until after the next win.flip.</p>
+<p>Actions are always 1 frame after the request.</p>
+<p>May do odd things if Goggles and Analog are also
+in use.</p>
+<dl class="docutils">
+<dt>Example: </dt>
+<dd>bits.sendTrigger(0b0000000010, 2.0, 4.0)
+bits.win.flip()</dd>
+</dl>
+<p>Will send a 4ms puilse on DOUT1 2ms after the start of the frame.
+Due to the following win.flip() the pulse should last for 1 frame only.</p>
+<p>Triggers will continue until stopTrigger is called.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.hardware.crs.bits.BitsPlusPlus.setContrast">
+<code class="descname">setContrast</code><span class="sig-paren">(</span><em>contrast</em>, <em>LUTrange=1.0</em>, <em>gammaCorrect=None</em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.crs.bits.BitsPlusPlus.setContrast" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the contrast of the LUT for ‘bits++’ mode only
+:Parameters:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>contrast <span class="classifier-delimiter">:</span> <span class="classifier">float in the range 0:1</span></dt>
+<dd>The contrast for the range being set</dd>
+<dt>LUTrange <span class="classifier-delimiter">:</span> <span class="classifier">float or array</span></dt>
+<dd>If a float is given then this is the fraction of the LUT
+to be used. If an array of floats is given, these will
+specify the start / stop points as fractions of the LUT.
+If an array of ints (0-255) is given these determine the
+start stop <em>indices</em> of the LUT</dd>
+</dl>
+</div></blockquote>
+<dl class="docutils">
+<dt>Examples:</dt>
+<dd><dl class="first docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">setContrast(1.0,0.5)</span></code></dt>
+<dd>will set the central 50% of the LUT so that a stimulus with
+contr=0.5 will actually be drawn with contrast 1.0</dd>
+</dl>
+<p><code class="docutils literal notranslate"><span class="pre">setContrast(1.0,[0.25,0.5])</span></code>
+<code class="docutils literal notranslate"><span class="pre">setContrast(1.0,[63,127])</span></code></p>
+<blockquote class="last">
+<div>will set the lower-middle quarter of the LUT
+(which might be useful in LUT animation paradigms)</div></blockquote>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.hardware.crs.bits.BitsPlusPlus.setGamma">
+<code class="descname">setGamma</code><span class="sig-paren">(</span><em>newGamma</em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.crs.bits.BitsPlusPlus.setGamma" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the LUT to have the requested gamma value
+Currently also resets the LUT to be a linear contrast
+ramp spanning its full range. May change this to read
+the current LUT, undo previous gamma and then apply
+new one?</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.hardware.crs.bits.BitsPlusPlus.setLUT">
+<code class="descname">setLUT</code><span class="sig-paren">(</span><em>newLUT=None</em>, <em>gammaCorrect=True</em>, <em>LUTrange=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.crs.bits.BitsPlusPlus.setLUT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the LUT to a specific range of values in ‘bits++’ mode only
+Note that, if you leave gammaCorrect=True then any LUT values you
+supply will automatically be gamma corrected.
+The LUT will take effect on the next <cite>Window.flip()</cite>
+<strong>Examples:</strong></p>
+<blockquote>
+<div><dl class="docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">bitsBox.setLUT()</span></code></dt>
+<dd>builds a LUT using bitsBox.contrast and bitsBox.gamma</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">bitsBox.setLUT(newLUT=some256x1array)</span></code></dt>
+<dd>(NB array should be float 0.0:1.0)
+Builds a luminance LUT using newLUT for each gun
+(actually array can be 256x1 or 1x256)</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">bitsBox.setLUT(newLUT=some256x3array)</span></code></dt>
+<dd>(NB array should be float 0.0:1.0)
+Allows you to use a different LUT on each gun</dd>
+</dl>
+</div></blockquote>
+<p>(NB by using BitsBox.setContr() and BitsBox.setGamma() users may not
+need this function)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.hardware.crs.bits.BitsPlusPlus.setTrigger">
+<code class="descname">setTrigger</code><span class="sig-paren">(</span><em>triggers=0</em>, <em>onTime=0</em>, <em>duration=0</em>, <em>mask=65535</em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.crs.bits.BitsPlusPlus.setTrigger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Quick way to set up triggers.</p>
+<p>Triggers is a binary word that determines which 
+triggers will be turned on.</p>
+<p>onTime specifies the start time of the trigger within
+the frame (in S with 100uS resolution)</p>
+<p>Duration specifies how long the trigger will last.
+(in S with 100uS resolution).</p>
+<p>Note that mask only protects the digital output lines
+set by other activities in the Bits. Not other triggers.</p>
+<dl class="docutils">
+<dt>Example: </dt>
+<dd>bits.setTrigger(0b0000000010, 2.0, 4.0, 0b0111111111)
+bits.startTrigger()</dd>
+</dl>
+<p>Will issue a 4ms long high-going pulse, 2ms after the start 
+of each frame on DOUT1 while protecting the value of DOUT 9.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.hardware.crs.bits.BitsPlusPlus.setTriggerList">
+<code class="descname">setTriggerList</code><span class="sig-paren">(</span><em>triggerList=None</em>, <em>mask=65535</em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.crs.bits.BitsPlusPlus.setTriggerList" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets up Tigger pulses in Bist++ using the fine grained
+method that can control every trigger line at 100uS
+intervals.</p>
+<p>TriggerList should contain 1 entry for every 100uS 
+packet (see getPackets) the binary word in each entry 
+specifies which trigger line will be active during that
+time slot.</p>
+<p>Note that mask only protects the digital output lines
+set by other activities in the Bits. Not other triggers.</p>
+<dl class="docutils">
+<dt>Example:</dt>
+<dd>packet = [0]*self._NumberPackets
+packet[0] = 0b0000000010
+bits.setTriggerList(packet)</dd>
+</dl>
+<p>Will sens a 100us pulse on DOUT1 at the start of the frame.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Example 2:</dt>
+<dd>packet = [0]*self._NumberPackets
+packet[10] = 0b0000000010
+packet[20] = 0b0000000001
+bits.setTriggerList(packet)
+bits.statrtTrigger()</dd>
+</dl>
+</div></blockquote>
+<p>Will sens a 100us pulse on DOUT1 1000us after the start of the 
+frame and a second 100us pusle on DOUT0 2000us after the start of
+the frame.</p>
+<p>Triggers will continue until stopTrigger is called.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.hardware.crs.bits.BitsPlusPlus.startGoggles">
+<code class="descname">startGoggles</code><span class="sig-paren">(</span><em>left=0</em>, <em>right=1</em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.crs.bits.BitsPlusPlus.startGoggles" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Starts CRS stereo goggles. Note if you are </dt>
+<dd><p class="first">using FE-1 goggles you should start this before 
+connecting the goggles.</p>
+<p>Left is the state of the left shutter on the 
+first frame to be presented 0, False or 
+‘closed’=closed; 1, True or ‘open’ = open,</p>
+<p class="last">right is the state of the right shutter on the 
+first frame to be presented 0, False or</p>
+</dd>
+</dl>
+<p>‘closed’=closed; 1, True or ‘open’ = open</p>
+<p>Note you can set the goggles to be both open 
+or both closed on the same frame.</p>
+<p>The system will always toggle the state of 
+each lens so as to not damage FE-1 goggles.</p>
+<dl class="docutils">
+<dt>Example:</dt>
+<dd><p class="first">bits.startGoggles(0,1)
+bits.win.flip()
+while not response</p>
+<blockquote>
+<div>bits.win.flip()
+#do some processing</div></blockquote>
+<p class="last">bits.stopGoggles()
+bits.win.flip()</p>
+</dd>
+</dl>
+<p>Starts toggling the goggles with the right eye open in sync with the
+first win.flip(0) within the loop. The open eye will alternate.</p>
+<dl class="docutils">
+<dt>Example:</dt>
+<dd><p class="first">bits.startGoggles(1,1)
+bits.win.flip()
+while not response</p>
+<blockquote>
+<div>bits.win.flip()
+#do some processing</div></blockquote>
+<p class="last">bits.stopGoggles()
+bits.win.flip()</p>
+</dd>
+</dl>
+<p>Starts toggling the goggle with both eyes open in sync with the first
+win.flip(0 within the loop. Eyes will alternate between both open and both closed.</p>
+<p>Note it is safet to leave the goggles toggling forever, ie to never call stopGoggles().</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.hardware.crs.bits.BitsPlusPlus.startTrigger">
+<code class="descname">startTrigger</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.crs.bits.BitsPlusPlus.startTrigger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start sending triggers on the next win flip 
+and continue until stopped by stopTrigger
+Triggers start 1 frame after the frame on which 
+the first trigger is sent.</p>
+<dl class="docutils">
+<dt>Example: </dt>
+<dd><p class="first">bits.setTrigger(0b0000000010, 2.0, 4.0, 0b0111111111)
+bits.startTrigger()
+while imageOn:</p>
+<blockquote>
+<div>#do some processing
+continue</div></blockquote>
+<p class="last">bits.stopTrigger()
+bits.win.flip()</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.hardware.crs.bits.BitsPlusPlus.stopGoggles">
+<code class="descname">stopGoggles</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.crs.bits.BitsPlusPlus.stopGoggles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stop the stereo goggles from toggling</p>
+<dl class="docutils">
+<dt>Example:</dt>
+<dd><p class="first">bits.startGoggles(0,1)
+bits.win.flip()
+while not response</p>
+<blockquote>
+<div>bits.win.flip()
+#do some processing</div></blockquote>
+<p class="last">bits.stopGoggles()
+bits.win.flip()</p>
+</dd>
+</dl>
+<p>Starts toggling the goggles with the right eye open in sync with the
+first win.flip(0) within the loop. The open eye will alternate.</p>
+<p>Note it is safer to leave the goggles toggling forever, ie to never call stopGoggles().</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.hardware.crs.bits.BitsPlusPlus.stopTrigger">
+<code class="descname">stopTrigger</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.crs.bits.BitsPlusPlus.stopTrigger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stop sending triggers at the next win flip</p>
+<dl class="docutils">
+<dt>Example: </dt>
+<dd><p class="first">bits.setTrigger(0b0000000010, 2.0, 4.0, 0b0111111111)
+bits.startTrigger()
+while imageOn:</p>
+<blockquote>
+<div>#do some processing
+continue</div></blockquote>
+<p class="last">bits.stopTrigger()
+bits.win.flip()</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.hardware.crs.bits.BitsPlusPlus.syncClocks">
+<code class="descname">syncClocks</code><span class="sig-paren">(</span><em>t</em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.hardware.crs.bits.BitsPlusPlus.syncClocks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Synchronise the Bits/RTBox Clock with the host clock 
+Given by t.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="finding-the-identity-lut">
+<span id="bitsplusplusidentitylut"></span><h2>Finding the identity LUT<a class="headerlink" href="#finding-the-identity-lut" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>For the Bits++ (and related) devices
+to work correctly it is essential that the graphics card is not
+altering in any way the values being passed to the monitor (e.g. by gamma
+correcting). It turns out that finding the ‘identity’ LUT, where exactly the
+same values come out as were put in, is not trivial. The obvious LUT
+would have something like 0/255, 1/255, 2/255… in entry locations 0,1,2…
+but unfortunately most graphics cards on most operating systems are
+‘broken’ in one way or another, with rounding errors and incorrect start
+points etc.</p>
+<p>PsychoPy provides a few of the common variants of LUT and that can be
+chosen when you initialise the device using the parameter <cite>rampType</cite>. If no
+<cite>rampType</cite> is specified then PsychoPy will choose one for you:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">psychopy</span> <span class="k">import</span> <span class="n">visual</span>
+<span class="kn">from</span> <span class="nn">psychopy.hardware</span> <span class="k">import</span> <span class="n">crs</span>
+
+<span class="n">win</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">Window</span><span class="p">([</span><span class="mi">1024</span><span class="p">,</span><span class="mi">768</span><span class="p">],</span> <span class="n">useFBO</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1">#we need to be rendering to framebuffer</span>
+<span class="n">bits</span> <span class="o">=</span> <span class="n">crs</span><span class="o">.</span><span class="n">BitsPlusPlus</span><span class="p">(</span><span class="n">win</span><span class="p">,</span> <span class="n">mode</span> <span class="o">=</span> <span class="s1">&#39;bits++&#39;</span><span class="p">,</span> <span class="n">rampType</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The Bits# is capable of reporting back the pixels in a line and this can be
+used to test that a particular LUT is indeed providing identity values.
+If you have previously connected a <a class="reference internal" href="BitsSharp.html#psychopy.hardware.crs.bits.BitsSharp" title="psychopy.hardware.crs.bits.BitsSharp"><code class="xref py py-class docutils literal notranslate"><span class="pre">BitsSharp</span></code></a> device and used it with
+PsychoPy then a file will have been stored with a LUT that has been tested
+with that device. In this case set <cite>rampType = “configFile”</cite> for PsychoPy
+to use it if such a file is found.</p>
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="BitsSharp.html" title="BitsSharp"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../crs.html" title="Cambridge Research Systems Ltd."
+             >previous</a> |</li>
+        <li><a href="../../../index.html">PsychoPy</a> &raquo;</li>
+          <li><a href="../../../documentation.html" >Documentation</a> &raquo;</li>
+          <li><a href="../../api.html" >Reference Manual (API)</a> &raquo;</li>
+          <li><a href="../../hardware.html" ><code class="docutils literal notranslate"><span class="pre">psychopy.hardware</span></code> - hardware interfaces</a> &raquo;</li>
+          <li><a href="../crs.html" >Cambridge Research Systems Ltd.</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2018, Jonathan Peirce.
+      Last updated on Jul 25, 2018.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.7.0.
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-4089651-2', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+
+    <script type="text/javascript" src="http://www.ohloh.net/p/17081/widgets/project_partner_badge.js"></script>
+    </div>
+  </body>
+</html>

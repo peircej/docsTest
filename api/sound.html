@@ -1,0 +1,508 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>psychopy.sound - play various forms of sound &mdash; PsychoPy v3.0</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0.0b2',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="top" title="PsychoPy v3.0" href="../index.html" />
+    <link rel="up" title="Reference Manual (API)" href="api.html" />
+    <link rel="next" title="psychopy.tools - miscellaneous tools" href="tools.html" />
+    <link rel="prev" title="psychopy.serial - functions for interacting with the serial port" href="serial.html" /> 
+  </head>
+  <body>
+
+
+<div id="header"  style="background-color: white">
+<table width="100%" cellpadding="10">
+<tr><td style="text-align:left;vertical-align:middle">
+<a href='http://www.psychopy.org'><img src="../_static/psychopyDocBanner2.gif" alt="PsychoPy logo" /></a>
+</td><td style="text-align:right;vertical-align:middle">
+<a href='http://www.nottingham.ac.uk'><img src=../_static/UoN_Supported_RGBsm.png alt="University of Nottingham" /></a>
+</td></table>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="tools.html" title="psychopy.tools - miscellaneous tools"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="serial.html" title="psychopy.serial - functions for interacting with the serial port"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">PsychoPy</a> &raquo;</li>
+          <li><a href="../documentation.html" >Documentation</a> &raquo;</li>
+          <li><a href="api.html" accesskey="U">Reference Manual (API)</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3><a href="../index.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">psychopy.sound</span></code> - play various forms of sound</a><ul>
+<li><a class="reference internal" href="#sound"><code class="docutils literal notranslate"><span class="pre">Sound</span></code></a></li>
+<li><a class="reference internal" href="#sounddevice-backend"><cite>SoundDevice</cite> backend</a></li>
+<li><a class="reference internal" href="#pyo-backend"><cite>Pyo</cite> backend</a></li>
+<li><a class="reference internal" href="#pygame-backend"><cite>pygame</cite> backend</a></li>
+</ul>
+</li>
+</ul>
+
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="serial.html"
+                                  title="previous chapter"><code class="docutils literal notranslate"><span class="pre">psychopy.serial</span></code> - functions for interacting with the serial port</a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="tools.html"
+                                  title="next chapter"><code class="docutils literal notranslate"><span class="pre">psychopy.tools</span></code> - miscellaneous tools</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="../_sources/api/sound.rst.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+
+            <h3>Quick links</h3>
+            <ul>
+            <li><a href="http://psychopy.org/installation.html"><strong>Download</strong></a></li>
+            <li><a href="http://discourse.psychopy.org">Forum</a></li>
+            <li><a href="http://twitter.com/psychopy">Twitter</a></li>
+            </ul>
+
+            <!-- facebook like -->
+            <div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=122767831154831&amp;xfbml=1"></script>
+            <fb:like href="http://www.facebook.com/pages/PsychoPy/140222406067597" send="false" layout="button_count" width="300" show_faces="false" action="like" font=""></fb:like>
+
+            <!-- google +1 -->
+            <!-- Place this tag where you want the +1 button to render -->
+            <g:plusone count="false" href="http://www.psychopy.org"></g:plusone>
+            <!-- Place this tag after the last plusone tag -->
+            <script type="text/javascript">
+              window.___gcfg = {lang: 'en-GB'};
+              (function() {
+                var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                po.src = 'https://apis.google.com/js/plusone.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+              })();
+            </script>
+
+          <div id="searchbox" style="display: none">
+            <h3>Searches</h3>
+            <form action="http://www.google.com/cse" id="cse-search-box">
+                <input type="hidden" name="cx" value="partner-pub-0861691574026297:eyw5n7-ugep" />
+                <input type="hidden" name="ie" value="ISO-8859-1" />
+                <input type="text" name="q" size="20" />
+                <input type="submit" name="sa" value="Go" />
+            </form>
+              <p class="searchtip" style="font-size: 90%">
+              General
+              </p>
+            <script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=cse-search-box&amp;lang=en"></script>
+              <form class="search" action="../search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Docs only
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-psychopy.sound">
+<span id="psychopy-sound-play-various-forms-of-sound"></span><h1><a class="reference internal" href="#module-psychopy.sound" title="psychopy.sound"><code class="xref py py-mod docutils literal notranslate"><span class="pre">psychopy.sound</span></code></a> - play various forms of sound<a class="headerlink" href="#module-psychopy.sound" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="sound">
+<h2><code class="xref py py-class docutils literal notranslate"><span class="pre">Sound</span></code><a class="headerlink" href="#sound" title="Permalink to this headline">¶</a></h2>
+<p>PsychoPy currently supports a choice of three sound libraries: pyo, sounddevice or pygame. Select which will be
+used via the <a class="reference internal" href="../general/prefs.html#generalsettings"><span class="std std-ref">audioLib</span></a> preference. <cite>sound.Sound()</cite> will then refer to one of <cite>SoundDevice</cite>
+<cite>SoundPyo</cite> or <cite>SoundPygame</cite>. This can be set on a per-experiment basis by importing
+preferences, and <a class="reference internal" href="preferences.html"><span class="doc">setting the audioLib option</span></a> to use.</p>
+<blockquote>
+<div><ul class="simple">
+<li>The <cite>pygame</cite> backend is the oldest and should always work without errors, but has the least good performance. Use it if latencies foryour audio don’t mattter.</li>
+<li>The <cite>pyo</cite> library is, in theory, the highest performer, but in practice it has ften had issues (at least on macOS) with crashes and freezing of experiments, or causing them not to finish properly. If those issues aren’t affecting your studies then this could be the one for you.</li>
+<li>The <cite>sounddevice</cite> library looks like the way of the future. The performance appears to be good (although this might be less so in cases where you have complex rendering being done as well because it operates from the same computer core as the main experiment code). It’s newer than <cite>pyo</cite> and so more prone to bugs and we haven’t yet added microphone support to record your participants.</li>
+</ul>
+</div></blockquote>
+<p>Sounds are actually generated by a variety of classes, depending on which “backend” you use (like pyo or sounddevice) and these different backends can have slightly different attributes, as below.</p>
+<p>The user should typically do:</p>
+<blockquote>
+<div><cite>from psychopy.sound import Sound</cite></div></blockquote>
+<p>but the class that gets imported will then be an alias of one of the following.</p>
+</div>
+<div class="section" id="sounddevice-backend">
+<h2><cite>SoundDevice</cite> backend<a class="headerlink" href="#sounddevice-backend" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="psychopy.sound.backend_sounddevice.SoundDeviceSound">
+<em class="property">class </em><code class="descclassname">psychopy.sound.backend_sounddevice.</code><code class="descname">SoundDeviceSound</code><span class="sig-paren">(</span><em>value='C'</em>, <em>secs=0.5</em>, <em>octave=4</em>, <em>stereo=-1</em>, <em>volume=1.0</em>, <em>loops=0</em>, <em>sampleRate=44100</em>, <em>blockSize=128</em>, <em>preBuffer=-1</em>, <em>hamming=True</em>, <em>startTime=0</em>, <em>stopTime=-1</em>, <em>name=''</em>, <em>autoLog=True</em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.sound.backend_sounddevice.SoundDeviceSound" title="Permalink to this definition">¶</a></dt>
+<dd><p>Play a variety of sounds using the new SoundDevice library</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>value</strong> – note name (“C”,”Bfl”), filename or frequency (Hz)</li>
+<li><strong>secs</strong> – duration (for synthesised tones)</li>
+<li><strong>octave</strong> – which octave to use for note names (4 is middle)</li>
+<li><strong>stereo</strong> – -1 (auto), True or False
+to force sounds to stereo or mono</li>
+<li><strong>volume</strong> – float 0-1</li>
+<li><strong>loops</strong> – number of loops to play (-1=forever, 0=single repeat)</li>
+<li><strong>sampleRate</strong> – sample rate for synthesized tones</li>
+<li><strong>blockSize</strong> – the size of the buffer on the sound card
+(small for low latency, large for stability)</li>
+<li><strong>preBuffer</strong> – integer to control streaming/buffering
+- -1 means store all
+- 0 (no buffer) means stream from disk
+- potentially we could buffer a few secs(!?)</li>
+<li><strong>hamming</strong> – boolean (default True) to indicate if the sound should
+be apodized (i.e., the onset and offset smoothly ramped up from
+down to zero). The function apodize uses a Hanning window, but
+arguments named ‘hamming’ are preserved so that existing code
+is not broken by the change from Hamming to Hanning internally.
+Not applied to sounds from files.</li>
+<li><strong>startTime</strong> – for sound files this controls the start of snippet</li>
+<li><strong>stopTime</strong> – for sound files this controls the end of snippet</li>
+<li><strong>name</strong> – string for logging purposes</li>
+<li><strong>autoLog</strong> – whether to automatically log every change</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="psychopy.sound.backend_sounddevice.SoundDeviceSound.pause">
+<code class="descname">pause</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.sound.backend_sounddevice.SoundDeviceSound.pause" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stop the sound but play will continue from here if needed</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.sound.backend_sounddevice.SoundDeviceSound.play">
+<code class="descname">play</code><span class="sig-paren">(</span><em>loops=None</em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.sound.backend_sounddevice.SoundDeviceSound.play" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start the sound playing</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.sound.backend_sounddevice.SoundDeviceSound.setSound">
+<code class="descname">setSound</code><span class="sig-paren">(</span><em>value</em>, <em>secs=0.5</em>, <em>octave=4</em>, <em>hamming=None</em>, <em>log=True</em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.sound.backend_sounddevice.SoundDeviceSound.setSound" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the sound to be played.</p>
+<p>Often this is not needed by the user - it is called implicitly during
+initialisation.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt>value: can be a number, string or an array:</dt>
+<dd><ul class="first last simple">
+<li>If it’s a number between 37 and 32767 then a tone will
+be generated at that frequency in Hz.</li>
+<li>It could be a string for a note (‘A’, ‘Bfl’, ‘B’, ‘C’,
+‘Csh’. …). Then you may want to specify which octave.</li>
+<li>Or a string could represent a filename in the current
+location, or mediaLocation, or a full path combo</li>
+<li>Or by giving an Nx2 numpy array of floats (-1:1) you can
+specify the sound yourself as a waveform</li>
+</ul>
+</dd>
+<dt>secs: duration (only relevant if the value is a note name or</dt>
+<dd><p class="first last">a frequency value)</p>
+</dd>
+<dt>octave: is only relevant if the value is a note name.</dt>
+<dd><p class="first last">Middle octave of a piano is 4. Most computers won’t
+output sounds in the bottom octave (1) and the top
+octave (8) is generally painful</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.sound.backend_sounddevice.SoundDeviceSound.stop">
+<code class="descname">stop</code><span class="sig-paren">(</span><em>reset=True</em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.sound.backend_sounddevice.SoundDeviceSound.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stop the sound and return to beginning</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="psychopy.sound.backend_sounddevice.SoundDeviceSound.stream">
+<code class="descname">stream</code><a class="headerlink" href="#psychopy.sound.backend_sounddevice.SoundDeviceSound.stream" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only property returns the the stream on which the sound
+will be played</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="pyo-backend">
+<h2><cite>Pyo</cite> backend<a class="headerlink" href="#pyo-backend" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="psychopy.sound.backend_pyo.SoundPyo">
+<em class="property">class </em><code class="descclassname">psychopy.sound.backend_pyo.</code><code class="descname">SoundPyo</code><span class="sig-paren">(</span><em>value='C'</em>, <em>secs=0.5</em>, <em>octave=4</em>, <em>stereo=True</em>, <em>volume=1.0</em>, <em>loops=0</em>, <em>sampleRate=44100</em>, <em>bits=16</em>, <em>hamming=True</em>, <em>start=0</em>, <em>stop=-1</em>, <em>name=''</em>, <em>autoLog=True</em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.sound.backend_pyo.SoundPyo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a sound object, from one of MANY ways.</p>
+<dl class="docutils">
+<dt>value: can be a number, string or an array:</dt>
+<dd><ul class="first simple">
+<li>If it’s a number between 37 and 32767 then a tone will be
+generated at that frequency in Hz.</li>
+<li>It could be a string for a note (‘A’, ‘Bfl’, ‘B’, ‘C’,
+‘Csh’, …). Then you may want to specify which octave as well</li>
+<li>Or a string could represent a filename in the current location,
+or mediaLocation, or a full path combo</li>
+<li>Or by giving an Nx2 numpy array of floats (-1:1) you can
+specify the sound yourself as a waveform</li>
+</ul>
+<p class="last">By default, a Hanning window (5ms duration) will be applied to a
+generated tone, so that onset and offset are smoother (to avoid
+clicking). To disable the Hanning window, set <cite>hamming=False</cite>.</p>
+</dd>
+<dt>secs:</dt>
+<dd>Duration of a tone. Not used for sounds from a file.</dd>
+<dt>start <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Where to start playing a sound file;
+default = 0s (start of the file).</dd>
+<dt>stop <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Where to stop playing a sound file; default = end of file.</dd>
+<dt>octave: is only relevant if the value is a note name.</dt>
+<dd>Middle octave of a piano is 4. Most computers won’t
+output sounds in the bottom octave (1) and the top
+octave (8) is generally painful</dd>
+<dt>stereo: True (= default, two channels left and right),</dt>
+<dd>False (one channel)</dd>
+<dt>volume: loudness to play the sound, from 0.0 (silent) to 1.0 (max).</dt>
+<dd>Adjustments are not possible during playback, only before.</dd>
+<dt>loops <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd>How many times to repeat the sound after it plays once. If
+<cite>loops</cite> == -1, the sound will repeat indefinitely until stopped.</dd>
+<dt>sampleRate (= 44100): if the psychopy.sound.init() function has been</dt>
+<dd>called or if another sound has already been created then this
+argument will be ignored and the previous setting will be used</dd>
+</dl>
+<p>bits: has no effect for the pyo backend</p>
+<dl class="docutils">
+<dt>hamming: boolean (default True) to indicate if the sound should</dt>
+<dd>be apodized (i.e., the onset and offset smoothly ramped up from
+down to zero). The function apodize uses a Hanning window, but
+arguments named ‘hamming’ are preserved so that existing code
+is not broken by the change from Hamming to Hanning internally.
+Not applied to sounds from files.</dd>
+</dl>
+<dl class="method">
+<dt id="psychopy.sound.backend_pyo.SoundPyo.play">
+<code class="descname">play</code><span class="sig-paren">(</span><em>loops=None</em>, <em>autoStop=True</em>, <em>log=True</em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.sound.backend_pyo.SoundPyo.play" title="Permalink to this definition">¶</a></dt>
+<dd><p>Starts playing the sound on an available channel.</p>
+<dl class="docutils">
+<dt>loops <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd>(same as above)</dd>
+</dl>
+<p>For playing a sound file, you cannot specify the start and stop
+times when playing the sound, only when creating the sound initially.</p>
+<p>Playing a sound runs in a separate thread i.e. your code won’t wait
+for the sound to finish before continuing. To pause while playing,
+you need to use a <cite>psychopy.core.wait(mySound.getDuration())</cite>.
+If you call <cite>play()</cite> while something is already playing the sounds
+will be played over each other.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.sound.backend_pyo.SoundPyo.stop">
+<code class="descname">stop</code><span class="sig-paren">(</span><em>log=True</em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.sound.backend_pyo.SoundPyo.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stops the sound immediately</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="pygame-backend">
+<h2><cite>pygame</cite> backend<a class="headerlink" href="#pygame-backend" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="psychopy.sound.backend_pygame.SoundPygame">
+<em class="property">class </em><code class="descclassname">psychopy.sound.backend_pygame.</code><code class="descname">SoundPygame</code><span class="sig-paren">(</span><em>value='C'</em>, <em>secs=0.5</em>, <em>octave=4</em>, <em>sampleRate=44100</em>, <em>bits=16</em>, <em>name=''</em>, <em>autoLog=True</em>, <em>loops=0</em>, <em>stereo=True</em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.sound.backend_pygame.SoundPygame" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a sound object, from one of many ways.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt>value: can be a number, string or an array:</dt>
+<dd><ul class="first last simple">
+<li>If it’s a number between 37 and 32767 then a tone will be
+generated at that frequency in Hz.</li>
+<li>It could be a string for a note (‘A’, ‘Bfl’, ‘B’, ‘C’,
+‘Csh’, …). Then you may want to specify which octave as well</li>
+<li>Or a string could represent a filename in the current
+location, or mediaLocation, or a full path combo</li>
+<li>Or by giving an Nx2 numpy array of floats (-1:1) you
+can specify the sound yourself as a waveform</li>
+</ul>
+</dd>
+<dt>secs: duration (only relevant if the value is a note name or a</dt>
+<dd><p class="first last">frequency value)</p>
+</dd>
+<dt>octave: is only relevant if the value is a note name.</dt>
+<dd><p class="first last">Middle octave of a piano is 4. Most computers won’t
+output sounds in the bottom octave (1) and the top
+octave (8) is generally painful</p>
+</dd>
+</dl>
+<p>sampleRate(=44100): If a sound has already been created or if the</p>
+<dl class="last docutils">
+<dt>bits(=16):  Pygame uses the same bit depth for all sounds once</dt>
+<dd><p class="first last">initialised</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="psychopy.sound.backend_pygame.SoundPygame.fadeOut">
+<code class="descname">fadeOut</code><span class="sig-paren">(</span><em>mSecs</em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.sound.backend_pygame.SoundPygame.fadeOut" title="Permalink to this definition">¶</a></dt>
+<dd><p>fades out the sound (when playing) over mSecs.
+Don’t know why you would do this in psychophysics but it’s easy
+and fun to include as a possibility :)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.sound.backend_pygame.SoundPygame.getDuration">
+<code class="descname">getDuration</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.sound.backend_pygame.SoundPygame.getDuration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get’s the duration of the current sound in secs</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.sound.backend_pygame.SoundPygame.getVolume">
+<code class="descname">getVolume</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.sound.backend_pygame.SoundPygame.getVolume" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the current volume of the sound (0.0:1.0)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.sound.backend_pygame.SoundPygame.play">
+<code class="descname">play</code><span class="sig-paren">(</span><em>fromStart=True</em>, <em>log=True</em>, <em>loops=None</em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.sound.backend_pygame.SoundPygame.play" title="Permalink to this definition">¶</a></dt>
+<dd><p>Starts playing the sound on an available channel.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt>fromStart <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Not yet implemented.</p>
+</dd>
+<dt>log <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Whether or not to log the playback event.</p>
+</dd>
+<dt>loops <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">How many times to repeat the sound after it plays once. If
+<cite>loops</cite> == -1, the sound will repeat indefinitely until
+stopped.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Notes:</th><td class="field-body"><p class="first last">If no sound channels are available, it will not play and return
+None. This runs off a separate thread i.e. your code won’t wait
+for the sound to finish before continuing. You need to use a
+psychopy.core.wait() command if you want things to pause.
+If you call play() whiles something is already playing the sounds
+will be played over each other.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.sound.backend_pygame.SoundPygame.setVolume">
+<code class="descname">setVolume</code><span class="sig-paren">(</span><em>newVol</em>, <em>log=True</em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.sound.backend_pygame.SoundPygame.setVolume" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the current volume of the sound (0.0:1.0)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.sound.backend_pygame.SoundPygame.stop">
+<code class="descname">stop</code><span class="sig-paren">(</span><em>log=True</em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.sound.backend_pygame.SoundPygame.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stops the sound immediately</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="tools.html" title="psychopy.tools - miscellaneous tools"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="serial.html" title="psychopy.serial - functions for interacting with the serial port"
+             >previous</a> |</li>
+        <li><a href="../index.html">PsychoPy</a> &raquo;</li>
+          <li><a href="../documentation.html" >Documentation</a> &raquo;</li>
+          <li><a href="api.html" >Reference Manual (API)</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2018, Jonathan Peirce.
+      Last updated on Jul 25, 2018.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.7.0.
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-4089651-2', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+
+    <script type="text/javascript" src="http://www.ohloh.net/p/17081/widgets/project_partner_badge.js"></script>
+    </div>
+  </body>
+</html>

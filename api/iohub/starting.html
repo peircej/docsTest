@@ -1,0 +1,741 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Starting the psychopy.iohub Process &mdash; PsychoPy v3.0</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '3.0.0b2',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="PsychoPy v3.0" href="../../index.html" />
+    <link rel="up" title="psychopy.iohub - ioHub event monitoring framework" href="../iohub.html" />
+    <link rel="next" title="ioHub Devices and Device Events" href="devices.html" />
+    <link rel="prev" title="psychopy.iohub Specific Requirements" href="requirements.html" /> 
+  </head>
+  <body>
+
+
+<div id="header"  style="background-color: white">
+<table width="100%" cellpadding="10">
+<tr><td style="text-align:left;vertical-align:middle">
+<a href='http://www.psychopy.org'><img src="../../_static/psychopyDocBanner2.gif" alt="PsychoPy logo" /></a>
+</td><td style="text-align:right;vertical-align:middle">
+<a href='http://www.nottingham.ac.uk'><img src=../../_static/UoN_Supported_RGBsm.png alt="University of Nottingham" /></a>
+</td></table>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="devices.html" title="ioHub Devices and Device Events"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="requirements.html" title="psychopy.iohub Specific Requirements"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">PsychoPy</a> &raquo;</li>
+          <li><a href="../../documentation.html" >Documentation</a> &raquo;</li>
+          <li><a href="../api.html" >Reference Manual (API)</a> &raquo;</li>
+          <li><a href="../iohub.html" accesskey="U"><code class="docutils literal notranslate"><span class="pre">psychopy.iohub</span></code> - ioHub event monitoring framework</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3><a href="../../index.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference internal" href="#">Starting the psychopy.iohub Process</a><ul>
+<li><a class="reference internal" href="#launchhubserver-function">launchHubServer function</a></li>
+<li><a class="reference internal" href="#iohubconnection-class">ioHubConnection Class</a></li>
+</ul>
+</li>
+</ul>
+
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="requirements.html"
+                                  title="previous chapter">psychopy.iohub Specific Requirements</a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="devices.html"
+                                  title="next chapter">ioHub Devices and Device Events</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="../../_sources/api/iohub/starting.rst.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+
+            <h3>Quick links</h3>
+            <ul>
+            <li><a href="http://psychopy.org/installation.html"><strong>Download</strong></a></li>
+            <li><a href="http://discourse.psychopy.org">Forum</a></li>
+            <li><a href="http://twitter.com/psychopy">Twitter</a></li>
+            </ul>
+
+            <!-- facebook like -->
+            <div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=122767831154831&amp;xfbml=1"></script>
+            <fb:like href="http://www.facebook.com/pages/PsychoPy/140222406067597" send="false" layout="button_count" width="300" show_faces="false" action="like" font=""></fb:like>
+
+            <!-- google +1 -->
+            <!-- Place this tag where you want the +1 button to render -->
+            <g:plusone count="false" href="http://www.psychopy.org"></g:plusone>
+            <!-- Place this tag after the last plusone tag -->
+            <script type="text/javascript">
+              window.___gcfg = {lang: 'en-GB'};
+              (function() {
+                var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                po.src = 'https://apis.google.com/js/plusone.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+              })();
+            </script>
+
+          <div id="searchbox" style="display: none">
+            <h3>Searches</h3>
+            <form action="http://www.google.com/cse" id="cse-search-box">
+                <input type="hidden" name="cx" value="partner-pub-0861691574026297:eyw5n7-ugep" />
+                <input type="hidden" name="ie" value="ISO-8859-1" />
+                <input type="text" name="q" size="20" />
+                <input type="submit" name="sa" value="Go" />
+            </form>
+              <p class="searchtip" style="font-size: 90%">
+              General
+              </p>
+            <script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=cse-search-box&amp;lang=en"></script>
+              <form class="search" action="../../search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Docs only
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <span class="target" id="module-psychopy.iohub.client"><span id="starting-iohub"></span></span><div class="section" id="starting-the-psychopy-iohub-process">
+<h1>Starting the psychopy.iohub Process<a class="headerlink" href="#starting-the-psychopy-iohub-process" title="Permalink to this headline">¶</a></h1>
+<p>To use ioHub within your PsychoPy Coder experiment script, ioHub needs to
+be started at the start of the experiment script. The easiest way to do this
+is by calling the launchHubServer function.</p>
+<div class="section" id="launchhubserver-function">
+<h2>launchHubServer function<a class="headerlink" href="#launchhubserver-function" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="psychopy.iohub.client.launchHubServer">
+<code class="descclassname">psychopy.iohub.client.</code><code class="descname">launchHubServer</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.iohub.client.launchHubServer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Starts the ioHub Server subprocess, and return a
+<a class="reference internal" href="#psychopy.iohub.client.ioHubConnection" title="psychopy.iohub.client.ioHubConnection"><code class="xref py py-class docutils literal notranslate"><span class="pre">psychopy.iohub.client.ioHubConnection</span></code></a> object that is used to
+access enabled iohub device’s events, get events, and control the
+ioHub process during the experiment.</p>
+<p>By default (no kwargs specified), the ioHub server does not create an
+ioHub HDF5 file, events are available to the experiment program at runtime.
+The following Devices are enabled by default:</p>
+<ul class="simple">
+<li>Keyboard: named ‘keyboard’, with runtime event reporting enabled.</li>
+<li>Mouse: named ‘mouse’, with runtime event reporting enabled.</li>
+<li>Monitor: named ‘monitor’.</li>
+<li>Experiment: named ‘experiment’.</li>
+</ul>
+<p>To customize how the ioHub Server is initialized when started, use
+one or more of the following keyword arguments when calling the function:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="30%" />
+<col width="24%" />
+<col width="21%" />
+<col width="24%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">kwarg Name</th>
+<th class="head">Value Type</th>
+<th class="head" colspan="2">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>experiment_code</td>
+<td>str, &lt;= 24 char</td>
+<td colspan="2">If experiment_code is provided,
+an ioHub HDF5 file will be
+created for the session.</td>
+</tr>
+<tr class="row-odd"><td>session_code</td>
+<td>str, &lt;= 24 char</td>
+<td colspan="2">When specified, used as the name
+of the ioHub HDF5 file created
+for the session.</td>
+</tr>
+<tr class="row-even"><td>experiment_info</td>
+<td>dict</td>
+<td colspan="2">Can be used to save the
+following experiment metadata
+fields:</td>
+</tr>
+<tr class="row-odd"><td colspan="2">&#160;</td>
+<td colspan="2"><ul class="first last simple">
+<li>code:         str, &lt;= 24 char</li>
+<li>title:        str, &lt;= 48 char</li>
+<li>description:  str, &lt; 256 char</li>
+<li>version:      str, &lt;= 6 char</li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td>session_info</td>
+<td>dict</td>
+<td colspan="2">Can be used to save the
+following session metadata
+fields:</td>
+</tr>
+<tr class="row-odd"><td colspan="2">&#160;</td>
+<td colspan="2"><ul class="first last simple">
+<li>code:         str, &lt;= 24 char</li>
+<li>name:         str, &lt;= 48 char</li>
+<li>comments:     str, &lt; 256 char</li>
+<li>user_variables:          dict</li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td>datastore_name</td>
+<td>str</td>
+<td colspan="2">Used to provide an ioHub HDF5
+file name different than the
+session_code.</td>
+</tr>
+<tr class="row-odd"><td>psychopy_monitor_name</td>
+<td>str</td>
+<td colspan="2">Provides the path of a
+PsychoPy Monitor Center config
+file. Information like display
+size is read and used to update
+the ioHub Display Device config.</td>
+</tr>
+<tr class="row-even"><td>iohub_config_name</td>
+<td>str</td>
+<td colspan="2">Specifies the name of the
+iohub_config.yaml file that
+contains the ioHub Device
+list to be used by the ioHub
+Server. i.e. the ‘device_list’
+section of the yaml file.</td>
+</tr>
+<tr class="row-odd"><td><p class="first">iohub.device.path</p>
+<p class="last">Multiple Device’s
+can be specified
+using separate
+kwarg entries.</p>
+</td>
+<td>dict</td>
+<td colspan="2">Add an ioHub Device by using the
+device class path as the key,
+and the device’s configuration
+in a dict value.</td>
+</tr>
+</tbody>
+</table>
+<p>Examples:</p>
+<blockquote>
+<div><ol class="upperalpha">
+<li><p class="first">Wait for the ‘q’ key to be pressed:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">psychopy.iohub.client</span> <span class="k">import</span> <span class="n">launchHubServer</span>
+
+<span class="c1"># Start the ioHub process. &#39;io&#39; can now be used during the</span>
+<span class="c1"># experiment to access iohub devices and read iohub device events.</span>
+<span class="n">io</span><span class="o">=</span><span class="n">launchHubServer</span><span class="p">()</span>
+
+<span class="nb">print</span> <span class="s2">&quot;Press any Key to Exit Example.....&quot;</span>
+
+<span class="c1"># Wait until a keyboard event occurs</span>
+<span class="n">keys</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">devices</span><span class="o">.</span><span class="n">keyboard</span><span class="o">.</span><span class="n">waitForKeys</span><span class="p">([</span><span class="s1">&#39;q&#39;</span><span class="p">,])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Key press detected: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">keys</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Exiting experiment....&quot;</span><span class="p">)</span>
+
+<span class="c1"># Stop the ioHub Server</span>
+<span class="n">io</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Use a XInput compliant game pad (e.g. Xbox 360 controller):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">psychopy.iohub.client</span> <span class="k">import</span> <span class="n">launchHubServer</span>
+
+<span class="c1"># Create an iohub_config kwargs dict and indicate that ioHub</span>
+<span class="c1"># should connect to a XInput compliant game pad using the</span>
+<span class="c1"># default devices settings.</span>
+<span class="n">iohub_config</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="n">iohub_config</span><span class="p">[</span><span class="s1">&#39;xinput.Gamepad&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+<span class="c1"># Start the ioHub Server Process and access the gamepad and</span>
+<span class="c1"># keyboard devices.</span>
+<span class="n">io</span> <span class="o">=</span> <span class="n">launchHubServer</span><span class="p">(</span><span class="o">**</span><span class="n">iohub_config</span><span class="p">)</span>
+<span class="n">gamepad</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">getDevice</span><span class="p">(</span><span class="s1">&#39;gamepad&#39;</span><span class="p">)</span>
+<span class="n">keyboard</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">devices</span><span class="o">.</span><span class="n">keyboard</span>
+
+<span class="k">if</span> <span class="n">gamepad</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Press &#39;A&#39; button on controller to make it rumble.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;To Exit the Demo, press any Keyboard key.....&quot;</span><span class="p">)</span>
+
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">getPresses</span><span class="p">():</span>
+        <span class="c1"># Get any new events from the game pad</span>
+        <span class="k">for</span> <span class="n">gp_evt</span> <span class="ow">in</span> <span class="n">gamepad</span><span class="o">.</span><span class="n">getEvents</span><span class="p">():</span>
+            <span class="c1"># Check if the gamepad button &#39;A&#39; was pressed....</span>
+            <span class="k">if</span> <span class="s1">&#39;A&#39;</span> <span class="ow">in</span> <span class="n">gp_evt</span><span class="o">.</span><span class="n">buttons</span><span class="p">:</span>
+                <span class="c1"># Rumble the game pad for 1 second:</span>
+                <span class="c1">#   - low frequency motor @ 50%</span>
+                <span class="c1">#   - high frequency motor @ 25%</span>
+                <span class="c1"># setRumble() returns as soon as the</span>
+                <span class="c1"># ioHub Server has started the requested action.</span>
+                <span class="n">rt</span><span class="p">,</span> <span class="n">rd</span> <span class="o">=</span> <span class="n">gamepad</span><span class="o">.</span><span class="n">setRumble</span><span class="p">(</span><span class="mf">50.0</span><span class="p">,</span> <span class="mf">25.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Started Rumbling....&quot;</span><span class="p">)</span>
+                <span class="n">io</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;XInput device connection failed.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Exiting demo....&quot;</span><span class="p">)</span>
+<span class="c1"># Stop the ioHub Server</span>
+<span class="n">io</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div></blockquote>
+<p>Please see the psychopy/demos/coder/iohub/launchHub.py demo for examples
+of different ways to use the launchHubServer function.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="iohubconnection-class">
+<h2>ioHubConnection Class<a class="headerlink" href="#iohubconnection-class" title="Permalink to this headline">¶</a></h2>
+<p>The psychopy.iohub.ioHubConnection object returned from the launchHubServer
+function provides methods for controlling the iohub process and
+accessing iohub devices and events.</p>
+<dl class="class">
+<dt id="psychopy.iohub.client.ioHubConnection">
+<em class="property">class </em><code class="descclassname">psychopy.iohub.client.</code><code class="descname">ioHubConnection</code><span class="sig-paren">(</span><em>ioHubConfig=None</em>, <em>ioHubConfigAbsPath=None</em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.iohub.client.ioHubConnection" title="Permalink to this definition">¶</a></dt>
+<dd><p>ioHubConnection is responsible for creating, sending requests to, and
+reading replies from the ioHub Process. This class is also used to
+shut down and disconnect the ioHub Server process.</p>
+<p>The ioHubConnection class is also used as the interface to any ioHub Device
+instances that have been created so that events from the device can be
+monitored. These device objects can be accessed via the ioHubConnection
+.devices attribute, providing ‘dot name’ access to enabled devices.
+Alternatively, the .getDevice(name) method can be used and will return
+None if the device name specified does not exist.</p>
+<p>Using the .devices attribute is handy if you know the name of the device
+to be accessed and you are sure it is actually enabled on the ioHub
+Process.</p>
+<p>An example of accessing a device using the .devices attribute:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># get the Mouse device, named mouse</span>
+<span class="n">mouse</span><span class="o">=</span><span class="n">hub</span><span class="o">.</span><span class="n">devices</span><span class="o">.</span><span class="n">mouse</span>
+<span class="n">mouse_position</span> <span class="o">=</span> <span class="n">mouse</span><span class="o">.</span><span class="n">getPosition</span><span class="p">()</span>
+
+<span class="nb">print</span> <span class="s1">&#39;mouse position: &#39;</span><span class="p">,</span> <span class="n">mouse_position</span>
+
+<span class="c1"># Returns something like:</span>
+<span class="c1"># &gt;&gt; mouse position:  [-211.0, 371.0]</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="psychopy.iohub.client.ioHubConnection.getDevice">
+<code class="descname">getDevice</code><span class="sig-paren">(</span><em>deviceName</em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.iohub.client.ioHubConnection.getDevice" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the ioHubDeviceView that has a matching name (based on the
+device : name property specified in the ioHub_config.yaml for the
+experiment). If no device with the given name is found, None is
+returned. Example, accessing a Keyboard device that was named ‘kb’</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">keyboard</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getDevice</span><span class="p">(</span><span class="s1">&#39;kb&#39;</span><span class="p">)</span>
+<span class="n">kb_events</span><span class="o">=</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">getEvent</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>This is the same as using the ‘natural naming’ approach supported
+by the .devices attribute, i.e:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">keyboard</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">devices</span><span class="o">.</span><span class="n">kb</span>
+<span class="n">kb_events</span><span class="o">=</span> <span class="n">keyboard</span><span class="o">.</span><span class="n">getEvent</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>However the advantage of using getDevice(device_name) is that an
+exception is not created if you provide an invalid device name,
+or if the device is not enabled on the ioHub server; None is returned
+instead.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>deviceName (str): Name given to the ioHub Device to be returned</dd>
+<dt>Returns:</dt>
+<dd>The ioHubDeviceView instance for deviceName.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.iohub.client.ioHubConnection.getEvents">
+<code class="descname">getEvents</code><span class="sig-paren">(</span><em>device_label=None</em>, <em>as_type='namedtuple'</em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.iohub.client.ioHubConnection.getEvents" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve any events that have been collected by the ioHub Process
+from monitored devices since the last call to getEvents() or
+clearEvents().</p>
+<p>By default all events for all monitored devices are returned,
+with each event being represented as a namedtuple of all event
+attributes.</p>
+<p>When events are retrieved from an event buffer, they are removed from
+that buffer as well.</p>
+<p>If events are only needed from one device instead of all devices,
+providing a valid device name as the device_label argument will
+result in only events from that device being returned.</p>
+<p>Events can be received in one of several object types by providing the
+optional as_type property to the method. Valid values for as_type are
+the following str values:</p>
+<blockquote>
+<div><ul class="simple">
+<li>‘list’: Each event is a list of ordered attributes.</li>
+<li>‘namedtuple’: Each event is converted to a namedtuple object.</li>
+<li>‘dict’: Each event converted to a dict object.</li>
+<li><dl class="first docutils">
+<dt>‘object’: Each event is converted to a DeviceEvent subclass</dt>
+<dd>based on the event’s type.</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><dl class="first docutils">
+<dt>device_label (str): Name of device to retrieve events for.</dt>
+<dd>If None ( the default ) returns device events
+from all devices.</dd>
+</dl>
+<p class="last">as_type (str): Returned event object type. Default: ‘namedtuple’.</p>
+</dd>
+<dt>Returns:</dt>
+<dd>tuple: List of event objects; object type controlled by ‘as_type’.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.iohub.client.ioHubConnection.clearEvents">
+<code class="descname">clearEvents</code><span class="sig-paren">(</span><em>device_label='all'</em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.iohub.client.ioHubConnection.clearEvents" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clears unread events from the ioHub Server’s Event Buffer(s)
+so that unneeded events are not discarded.</p>
+<p>If device_label is ‘all’, ( the default ), then events from both the
+ioHub <em>Global Event Buffer</em> and all <em>Device Event Buffer’s</em>
+are cleared.</p>
+<p>If device_label is None then all events in the ioHub
+<em>Global Event Buffer</em> are cleared, but the <em>Device Event Buffers</em>
+are unaffected.</p>
+<p>If device_label is a str giving a valid device name, then that
+<em>Device Event Buffer</em> is cleared, but the <em>Global Event Buffer</em> is not
+affected.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>device_label (str): device name, ‘all’, or None</dd>
+<dt>Returns:</dt>
+<dd>None</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.iohub.client.ioHubConnection.sendMessageEvent">
+<code class="descname">sendMessageEvent</code><span class="sig-paren">(</span><em>text</em>, <em>category=''</em>, <em>offset=0.0</em>, <em>sec_time=None</em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.iohub.client.ioHubConnection.sendMessageEvent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create and send an Experiment MessageEvent to the ioHub Server
+for storage in the ioDataStore hdf5 file.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">MessageEvents can be thought of as DeviceEvents from the
+virtual PsychoPy Process “Device”.</p>
+</div>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><p class="first">text (str): The text message for the message event. 128 char max.</p>
+<dl class="last docutils">
+<dt>category (str): A str grouping code for the message. Optional.</dt>
+<dd>32 char max.</dd>
+<dt>offset (float): Optional sec.msec offset applied to the</dt>
+<dd>message event time stamp. Default 0.</dd>
+<dt>sec_time (float): Absolute sec.msec time stamp for the message in.</dt>
+<dd>If not provided, or None, then the MessageEvent
+is time stamped when this method is called
+using the global timer (core.getTime()).</dd>
+</dl>
+</dd>
+<dt>Returns:</dt>
+<dd>bool: True</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.iohub.client.ioHubConnection.createTrialHandlerRecordTable">
+<code class="descname">createTrialHandlerRecordTable</code><span class="sig-paren">(</span><em>trials</em>, <em>cv_order=None</em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.iohub.client.ioHubConnection.createTrialHandlerRecordTable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a condition variable table in the ioHub data file based on
+the a psychopy TrialHandler. By doing so, the iohub data file
+can contain the DV and IV values used for each trial of an experiment
+session, along with all the iohub device events recorded by iohub
+during the session.</p>
+<p>Example psychopy code usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load a trial handler and</span>
+<span class="c1"># create an associated table in the iohub data file</span>
+<span class="c1">#</span>
+<span class="kn">from</span> <span class="nn">psychopy.data</span> <span class="k">import</span> <span class="n">TrialHandler</span><span class="p">,</span> <span class="n">importConditions</span>
+
+<span class="n">exp_conditions</span><span class="o">=</span><span class="n">importConditions</span><span class="p">(</span><span class="s1">&#39;trial_conditions.xlsx&#39;</span><span class="p">)</span>
+<span class="n">trials</span> <span class="o">=</span> <span class="n">TrialHandler</span><span class="p">(</span><span class="n">exp_conditions</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Inform the ioHub server about the TrialHandler</span>
+<span class="c1">#</span>
+<span class="n">io</span><span class="o">.</span><span class="n">createTrialHandlerRecordTable</span><span class="p">(</span><span class="n">trials</span><span class="p">)</span>
+
+<span class="c1"># Read a row of the trial handler for</span>
+<span class="c1"># each trial of your experiment</span>
+<span class="c1">#</span>
+<span class="k">for</span> <span class="n">trial</span> <span class="ow">in</span> <span class="n">trials</span><span class="p">:</span>
+    <span class="c1"># do whatever...</span>
+
+
+<span class="c1"># During the trial, trial variable values can be updated</span>
+<span class="c1">#</span>
+<span class="n">trial</span><span class="p">[</span><span class="s1">&#39;TRIAL_START&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">flip_time</span>
+
+<span class="c1"># At the end of each trial, before getting</span>
+<span class="c1"># the next trial handler row, send the trial</span>
+<span class="c1"># variable states to iohub so they can be stored for future</span>
+<span class="c1"># reference.</span>
+<span class="c1">#</span>
+<span class="n">io</span><span class="o">.</span><span class="n">addTrialHandlerRecord</span><span class="p">(</span><span class="n">trial</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.iohub.client.ioHubConnection.addTrialHandlerRecord">
+<code class="descname">addTrialHandlerRecord</code><span class="sig-paren">(</span><em>cv_row</em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.iohub.client.ioHubConnection.addTrialHandlerRecord" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds the values from a TriaHandler row / record to the iohub data
+file for future data analysis use.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>cv_row</strong> – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.iohub.client.ioHubConnection.getTime">
+<code class="descname">getTime</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.iohub.client.ioHubConnection.getTime" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Deprecated Method:</strong> Use Computer.getTime instead. Remains here for
+testing time bases between processes only.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.iohub.client.ioHubConnection.setPriority">
+<code class="descname">setPriority</code><span class="sig-paren">(</span><em>level='normal'</em>, <em>disable_gc=False</em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.iohub.client.ioHubConnection.setPriority" title="Permalink to this definition">¶</a></dt>
+<dd><p>See Computer.setPriority documentation, where current process will
+be the iohub process.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.iohub.client.ioHubConnection.getPriority">
+<code class="descname">getPriority</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.iohub.client.ioHubConnection.getPriority" title="Permalink to this definition">¶</a></dt>
+<dd><p>See Computer.getPriority documentation, where current process will
+be the iohub process.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.iohub.client.ioHubConnection.getProcessAffinity">
+<code class="descname">getProcessAffinity</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.iohub.client.ioHubConnection.getProcessAffinity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the current <strong>ioHub Process</strong> affinity setting,
+as a list of ‘processor’ id’s (from 0 to getSystemProcessorCount()-1).
+A Process’s Affinity determines which CPU’s or CPU cores a process can
+run on. By default the ioHub Process can run on any CPU or CPU core.</p>
+<p>This method is not supported on OS X at this time.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>None</dd>
+<dt>Returns:</dt>
+<dd><dl class="first last docutils">
+<dt>list: A list of integer values between 0 and</dt>
+<dd>Computer.getSystemProcessorCount()-1, where values in the
+list indicate processing unit indexes that the ioHub
+process is able to run on.</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.iohub.client.ioHubConnection.setProcessAffinity">
+<code class="descname">setProcessAffinity</code><span class="sig-paren">(</span><em>processor_list</em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.iohub.client.ioHubConnection.setProcessAffinity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the <strong>ioHub Process</strong> Affinity based on the value of
+processor_list.</p>
+<p>A Process’s Affinity determines which CPU’s or CPU cores a process can
+run on. By default the ioHub Process can run on any CPU or CPU core.</p>
+<p>The processor_list argument must be a list of ‘processor’ id’s;
+integers in the range of 0 to Computer.processing_unit_count-1,
+representing the processing unit indexes that the ioHub Server should
+be allowed to run on.</p>
+<p>If processor_list is given as an empty list, the ioHub Process will be
+able to run on any processing unit on the computer.</p>
+<p>This method is not supported on OS X at this time.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><dl class="first last docutils">
+<dt>processor_list (list): A list of integer values between 0 and</dt>
+<dd>Computer.processing_unit_count-1,
+where values in the list indicate
+processing unit indexes that the ioHub
+process is able to run on.</dd>
+</dl>
+</dd>
+<dt>Returns:</dt>
+<dd>None</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.iohub.client.ioHubConnection.flushDataStoreFile">
+<code class="descname">flushDataStoreFile</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.iohub.client.ioHubConnection.flushDataStoreFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Manually tell the ioDataStore to flush any events it has buffered in
+memory to disk.”.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>None</dd>
+<dt>Returns:</dt>
+<dd>None</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.iohub.client.ioHubConnection.startCustomTasklet">
+<code class="descname">startCustomTasklet</code><span class="sig-paren">(</span><em>task_name</em>, <em>task_class_path</em>, <em>**class_kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.iohub.client.ioHubConnection.startCustomTasklet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Instruct the iohub server to start running a custom tasklet given
+by task_class_path. It is important that the custom task does not block
+for any significant amount of time, or the processing of events by the
+iohub server will be negatively effected.</p>
+<p>See the customtask.py demo for an example of how to make a long running
+task not block the rest of the iohub server.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.iohub.client.ioHubConnection.stopCustomTasklet">
+<code class="descname">stopCustomTasklet</code><span class="sig-paren">(</span><em>task_name</em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.iohub.client.ioHubConnection.stopCustomTasklet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Instruct the iohub server to stop the custom task that was previously
+started by calling self.startCustomTasklet(….). task_name identifies
+which custom task should be stopped and must match the task_name
+of a previously started custom task.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.iohub.client.ioHubConnection.shutdown">
+<code class="descname">shutdown</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.iohub.client.ioHubConnection.shutdown" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tells the ioHub Server to close all ioHub Devices, the ioDataStore,
+and the connection monitor between the PsychoPy and ioHub Processes.
+Then end the server process itself.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>None</dd>
+<dt>Returns:</dt>
+<dd>None</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="psychopy.iohub.client.ioHubConnection.quit">
+<code class="descname">quit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.iohub.client.ioHubConnection.quit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Same as the shutdown() method, but has same name as PsychoPy
+core.quit() so maybe easier to remember.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="psychopy.iohub.client.ioHubConnection.eventListToObject">
+<em class="property">static </em><code class="descname">eventListToObject</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.iohub.client.ioHubConnection.eventListToObject" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert an ioHub event currently in list value format into the
+correct ioHub.devices.DeviceEvent subclass for the given event type.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="psychopy.iohub.client.ioHubConnection.eventListToDict">
+<em class="property">static </em><code class="descname">eventListToDict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.iohub.client.ioHubConnection.eventListToDict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert an ioHub event currently in list value format into
+the event as a dictionary of attribute name, attribute values.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="psychopy.iohub.client.ioHubConnection.eventListToNamedTuple">
+<em class="property">static </em><code class="descname">eventListToNamedTuple</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy.iohub.client.ioHubConnection.eventListToNamedTuple" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert an ioHub event currently in list value format into the
+namedtuple format for an event.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="devices.html" title="ioHub Devices and Device Events"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="requirements.html" title="psychopy.iohub Specific Requirements"
+             >previous</a> |</li>
+        <li><a href="../../index.html">PsychoPy</a> &raquo;</li>
+          <li><a href="../../documentation.html" >Documentation</a> &raquo;</li>
+          <li><a href="../api.html" >Reference Manual (API)</a> &raquo;</li>
+          <li><a href="../iohub.html" ><code class="docutils literal notranslate"><span class="pre">psychopy.iohub</span></code> - ioHub event monitoring framework</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2018, Jonathan Peirce.
+      Last updated on Jul 25, 2018.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.7.0.
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-4089651-2', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+
+    <script type="text/javascript" src="http://www.ohloh.net/p/17081/widgets/project_partner_badge.js"></script>
+    </div>
+  </body>
+</html>

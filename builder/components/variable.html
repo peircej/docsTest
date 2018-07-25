@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Variable Component &mdash; PsychoPy v3.0</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '3.0.0b2',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="PsychoPy v3.0" href="../../index.html" />
+    <link rel="up" title="Components" href="../components.html" />
+    <link rel="next" title="Experiment settings" href="../settings.html" />
+    <link rel="prev" title="Text Component" href="text.html" /> 
+  </head>
+  <body>
+
+
+<div id="header"  style="background-color: white">
+<table width="100%" cellpadding="10">
+<tr><td style="text-align:left;vertical-align:middle">
+<a href='http://www.psychopy.org'><img src="../../_static/psychopyDocBanner2.gif" alt="PsychoPy logo" /></a>
+</td><td style="text-align:right;vertical-align:middle">
+<a href='http://www.nottingham.ac.uk'><img src=../../_static/UoN_Supported_RGBsm.png alt="University of Nottingham" /></a>
+</td></table>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../settings.html" title="Experiment settings"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="text.html" title="Text Component"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">PsychoPy</a> &raquo;</li>
+          <li><a href="../../documentation.html" >Documentation</a> &raquo;</li>
+          <li><a href="../builder.html" >Builder</a> &raquo;</li>
+          <li><a href="../components.html" accesskey="U">Components</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3><a href="../../index.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference internal" href="#">Variable Component</a><ul>
+<li><a class="reference internal" href="#parameters">Parameters</a></li>
+</ul>
+</li>
+</ul>
+
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="text.html"
+                                  title="previous chapter">Text Component</a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="../settings.html"
+                                  title="next chapter">Experiment settings</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="../../_sources/builder/components/variable.rst.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+
+            <h3>Quick links</h3>
+            <ul>
+            <li><a href="http://psychopy.org/installation.html"><strong>Download</strong></a></li>
+            <li><a href="http://discourse.psychopy.org">Forum</a></li>
+            <li><a href="http://twitter.com/psychopy">Twitter</a></li>
+            </ul>
+
+            <!-- facebook like -->
+            <div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=122767831154831&amp;xfbml=1"></script>
+            <fb:like href="http://www.facebook.com/pages/PsychoPy/140222406067597" send="false" layout="button_count" width="300" show_faces="false" action="like" font=""></fb:like>
+
+            <!-- google +1 -->
+            <!-- Place this tag where you want the +1 button to render -->
+            <g:plusone count="false" href="http://www.psychopy.org"></g:plusone>
+            <!-- Place this tag after the last plusone tag -->
+            <script type="text/javascript">
+              window.___gcfg = {lang: 'en-GB'};
+              (function() {
+                var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                po.src = 'https://apis.google.com/js/plusone.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+              })();
+            </script>
+
+          <div id="searchbox" style="display: none">
+            <h3>Searches</h3>
+            <form action="http://www.google.com/cse" id="cse-search-box">
+                <input type="hidden" name="cx" value="partner-pub-0861691574026297:eyw5n7-ugep" />
+                <input type="hidden" name="ie" value="ISO-8859-1" />
+                <input type="text" name="q" size="20" />
+                <input type="submit" name="sa" value="Go" />
+            </form>
+              <p class="searchtip" style="font-size: 90%">
+              General
+              </p>
+            <script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=cse-search-box&amp;lang=en"></script>
+              <form class="search" action="../../search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Docs only
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="variable-component">
+<span id="text"></span><h1>Variable Component<a class="headerlink" href="#variable-component" title="Permalink to this headline">¶</a></h1>
+<p>A variable can hold quantities or values in memory that can be referenced using a variable name.
+You can store values in a variable to use in your experiments.</p>
+<div class="section" id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Name <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd>Everything in a PsychoPy experiment needs a unique name.
+The name should contain only letters, numbers and underscores (no punctuation marks or spaces).
+The variable name references the value stored in memory, so that your stored values can be used in your experiments.</dd>
+<dt>Start <span class="classifier-delimiter">:</span> <span class="classifier">int, float or bool</span></dt>
+<dd>The time or condition from when you want your variable to be defined. The default value is None, and so will be defined at the beginning of the experiment, trial or frame.
+See <a class="reference internal" href="../startStop.html#startstop"><span class="std std-ref">Defining the onset/duration of components</span></a> for details.</dd>
+<dt>Stop <span class="classifier-delimiter">:</span> <span class="classifier">int, float or bool</span></dt>
+<dd>The duration for which the variable is defined/updated. See <a class="reference internal" href="../startStop.html#startstop"><span class="std std-ref">Defining the onset/duration of components</span></a> for details.</dd>
+<dt>Experiment start value: any</dt>
+<dd>The variable can take any value at the beginning of the experiment, so long as you define you variables using literals or existing variables.</dd>
+<dt>Routine start value <span class="classifier-delimiter">:</span> <span class="classifier">any</span></dt>
+<dd>The variable can take any value at the beginning of a routine/trial, and can remain a constant, or be defined/updated on every routine.</dd>
+<dt>Frame start value <span class="classifier-delimiter">:</span> <span class="classifier">any</span></dt>
+<dd>The variable can take any value at the beginning of a frame, or during a condition bases on Start and/or Stop.</dd>
+<dt>Save exp start value <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd>Choose whether or not to save the experiment start value to your data file.</dd>
+<dt>Save routine start value <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd>Choose whether or not to save the routine start value to your data file.</dd>
+<dt>Save frame value <span class="classifier-delimiter">:</span> <span class="classifier">bool and drop=down menu</span></dt>
+<dd>Frame values are contained within a list for each trial, and discarded at the end of each trial.
+Choose whether or not to take the first, last or average variable values from the frame container, and save to your data file.</dd>
+<dt>Save routine start value <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd>Choose whether or not to save the routine end value to your data file.</dd>
+<dt>Save exp start value <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd>Choose whether or not to save the experiment end value to your data file.</dd>
+</dl>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../settings.html" title="Experiment settings"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="text.html" title="Text Component"
+             >previous</a> |</li>
+        <li><a href="../../index.html">PsychoPy</a> &raquo;</li>
+          <li><a href="../../documentation.html" >Documentation</a> &raquo;</li>
+          <li><a href="../builder.html" >Builder</a> &raquo;</li>
+          <li><a href="../components.html" >Components</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2018, Jonathan Peirce.
+      Last updated on Jul 25, 2018.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.7.0.
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-4089651-2', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+
+    <script type="text/javascript" src="http://www.ohloh.net/p/17081/widgets/project_partner_badge.js"></script>
+    </div>
+  </body>
+</html>
